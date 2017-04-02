@@ -7,15 +7,15 @@
 
 namespace BT
 {
-    class LeafNode : public TreeNode
-    {
-    protected:
-    public:
-        LeafNode(std::string name);
-        ~LeafNode();
-    void ResetColorState();
-    int Depth();
-    };
+class LeafNode : public TreeNode
+{
+protected:
+public:
+    explicit LeafNode(std::string name);
+    ~LeafNode();
+void ResetColorState();
+int Depth();
+};
 }
 
 #endif

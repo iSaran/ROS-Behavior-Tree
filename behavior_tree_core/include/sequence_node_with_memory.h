@@ -13,7 +13,7 @@ class SequenceNodeWithMemory : public ControlNode
 {
 public:
     // Constructor
-    SequenceNodeWithMemory(std::string name);
+    explicit SequenceNodeWithMemory(std::string name);
     SequenceNodeWithMemory(std::string name, int reset_policy);
     ~SequenceNodeWithMemory();
     int DrawType();

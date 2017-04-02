@@ -16,7 +16,7 @@ protected:
     behavior_tree_core::BTGoal goal;
 public:
     // Constructor
-    ROSAction(std::string name);
+    explicit ROSAction(std::string name);
     ~ROSAction();
 
     // The method that is going to be executed by the thread

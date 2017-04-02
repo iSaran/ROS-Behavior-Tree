@@ -15,7 +15,7 @@ protected:
     behavior_tree_core::BTGoal goal;
 public:
     // Constructor
-    ROSCondition(std::string Name);
+    explicit ROSCondition(std::string Name);
     ~ROSCondition();
 
     // The method that is going to be executed by the thread

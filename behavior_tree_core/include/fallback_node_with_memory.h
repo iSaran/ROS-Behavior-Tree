@@ -9,7 +9,7 @@ class FallbackNodeWithMemory : public ControlNode
 {
 public:
     // Constructor
-    FallbackNodeWithMemory(std::string name);
+    explicit FallbackNodeWithMemory(std::string name);
     FallbackNodeWithMemory(std::string name, int reset_policy);
     ~FallbackNodeWithMemory();
     int DrawType();

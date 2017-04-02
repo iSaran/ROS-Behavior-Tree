@@ -9,7 +9,7 @@ class SequenceNode : public ControlNode
 {
 public:
     // Constructor
-    SequenceNode(std::string name);
+    explicit SequenceNode(std::string name);
     ~SequenceNode();
     int DrawType();
     // The method that is going to be executed by the thread

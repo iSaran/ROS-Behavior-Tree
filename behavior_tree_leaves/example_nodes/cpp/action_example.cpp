@@ -20,7 +20,7 @@ protected:
 
 
 public:
-  BTAction(std::string name) :
+  explicit BTAction(std::string name) :
     as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
     action_name_(name)
   {
