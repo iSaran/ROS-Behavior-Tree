@@ -7,9 +7,7 @@ namespace BT
 {
     class ActionTestNode : public ActionNode
     {
-
     public:
-
         // Constructor
         ActionTestNode(std::string Name);
         ~ActionTestNode();
@@ -28,7 +26,6 @@ namespace BT
         bool boolean_value_;
 
         // ReturnStatus status_;
-
     };
 }
 

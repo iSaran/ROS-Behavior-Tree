@@ -21,7 +21,6 @@ BT::SequenceNodeWithMemory::~SequenceNodeWithMemory() {}
 
 BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
 {
-
     DEBUG_STDOUT(get_name() << " ticked, memory counter: "<< current_child_idx_);
 
     // Vector size initialization. N_of_children_ could change at runtime if you edit the tree
@@ -71,9 +70,7 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
 
         if(child_i_status_ == BT::SUCCESS ||child_i_status_ == BT::FAILURE )
         {
-
             children_nodes_[current_child_idx_]->set_status(BT::IDLE);  // the child goes in idle if it has returned success or failure.
-
         }
 
 
@@ -93,7 +90,6 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
         {
             // If the  child status is success, continue to the next child (if any, hence if(current_child_ != N_of_children_ - 1) ) in the for loop (if any).
             current_child_idx_++;
-
         }else
         {
             // if it the last child.

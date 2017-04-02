@@ -24,8 +24,6 @@ public:
 
     // The method used to interrupt the execution of the node
     void Halt();
-
-
 };
 }
 

@@ -15,7 +15,6 @@ BT::ROSCondition::~ROSCondition() {}
 
 BT::ReturnStatus BT::ROSCondition::Tick()
 {
-
     ROS_INFO("I am running the request");
 
     // Condition checking and state update
@@ -24,5 +23,4 @@ BT::ReturnStatus BT::ROSCondition::Tick()
     node_result = *(action_client_.getResult());
     set_status((ReturnStatus)node_result.status);
     return (ReturnStatus)node_result.status;
-
 }

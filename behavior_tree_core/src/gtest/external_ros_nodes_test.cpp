@@ -20,7 +20,6 @@ int main(int argc, char **argv)
         sequence1->AddChild(action);
 
         Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
-
 }
     catch (BT::BehaviorTreeException& Exception)
     {

@@ -4,7 +4,6 @@ BT::FallbackNodeWithMemory::FallbackNodeWithMemory(std::string name) : ControlNo
 {
     reset_policy_ = BT::ON_SUCCESS_OR_FAILURE;
     current_child_idx_ = 0;  // initialize the current running child
-
 }
 
 
@@ -14,7 +13,6 @@ BT::FallbackNodeWithMemory::FallbackNodeWithMemory(std::string name, int reset_p
 
     reset_policy_ = reset_policy;
     current_child_idx_ = 0;  // initialize the current running child
-
 }
 
 
@@ -23,7 +21,6 @@ BT::FallbackNodeWithMemory::~FallbackNodeWithMemory() {}
 
 BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()
 {
-
     DEBUG_STDOUT(get_name() << " ticked, memory counter: "<< current_child_idx_);
 
     // Vector size initialization. N_of_children_ could change at runtime if you edit the tree
@@ -73,9 +70,7 @@ BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()
 
         if(child_i_status_ == BT::SUCCESS ||child_i_status_ == BT::FAILURE )
         {
-
             children_nodes_[current_child_idx_]->set_status(BT::IDLE);  // the child goes in idle if it has returned success or failure.
-
         }
 
 
@@ -94,7 +89,6 @@ BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()
         {
             // If the  child status is failure, continue to the next child (if any, hence if(current_child_ != N_of_children_ - 1) ) in the for loop (if any).
             current_child_idx_++;
-
         }else
         {
             // if it the last child.

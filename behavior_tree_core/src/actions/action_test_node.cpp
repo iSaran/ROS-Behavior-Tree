@@ -17,12 +17,8 @@ BT::ActionTestNode::~ActionTestNode() {}
 
 void BT::ActionTestNode::WaitForTick()
 {
-
-
-
     while(true)
     {
-
         // Waiting for the first tick to come
         DEBUG_STDOUT(get_name() << " WAIT FOR TICK");
 
@@ -46,16 +42,13 @@ void BT::ActionTestNode::WaitForTick()
                 set_status(BT::SUCCESS);
                 DEBUG_STDOUT(" Action " << get_name() << " Done!");
                 i = 0;
-
             }else
             {
                 set_status(BT::FAILURE);
                 DEBUG_STDOUT(" Action " << get_name() << " FAILED!");
                 i = 0;
-
             }
         }
-
     }
 }
 

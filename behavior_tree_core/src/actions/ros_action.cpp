@@ -4,26 +4,18 @@
 
 BT::ROSAction::ROSAction(std::string name) : action_client_(name, true), ActionNode::ActionNode(name)
 {
-
-
     actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_(get_name(), true);
     ROS_INFO("Waiting For the Acutator named %s to start", get_name().c_str());
     action_client_.waitForServer();  // will wait for infinite time until the server starts
     ROS_INFO("The Acutator %s has started", get_name().c_str());
     // thread_ start
     thread_ = std::thread(&ROSAction::WaitForTick, this);
-
-
 }
 
 BT::ROSAction::~ROSAction() {}
 
 void BT::ROSAction::WaitForTick()
 {
-
-
-
-
       node_result.status = BT::RUNNING;
       while(true)
       {

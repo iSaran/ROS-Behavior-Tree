@@ -44,7 +44,6 @@ BT::ReturnStatus BT::ParallelNode::Tick()
         else
         {
             child_i_status_ = children_nodes_[i]->Tick();
-
         }
         switch(child_i_status_)
         {
@@ -52,8 +51,6 @@ BT::ReturnStatus BT::ParallelNode::Tick()
             children_nodes_[i]->set_status(BT::IDLE);  // the child goes in idle if it has returned success.
             if(++success_childred_num_ == threshold_M_)
             {
-
-
                 success_childred_num_ = 0;
                 failure_childred_num_ = 0;
                 HaltChildren(0);  // halts all running children. The execution is done.
@@ -65,7 +62,6 @@ BT::ReturnStatus BT::ParallelNode::Tick()
             children_nodes_[i]->set_status(BT::IDLE);  // the child goes in idle if it has returned failure.
             if(++failure_childred_num_ > N_of_children_- threshold_M_)
             {
-
                 DEBUG_STDOUT("*******PARALLEL" << get_name() << " FAILED****** failure_childred_num_:" << failure_childred_num_);
 
                 success_childred_num_ = 0;
@@ -82,7 +78,6 @@ BT::ReturnStatus BT::ParallelNode::Tick()
             break;
         default:
             break;
-
         }
     }
     return BT::RUNNING;

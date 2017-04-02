@@ -19,7 +19,6 @@ public:
 private:
     unsigned int current_child_idx_;
     unsigned int reset_policy_;
-
 };
 }
 

@@ -10,7 +10,6 @@ enum Status {RUNNING, SUCCESS, FAILURE};  // BT return status
 class BTAction
 {
 protected:
-
   ros::NodeHandle nh_;
   // NodeHandle instance must be created before this line. Otherwise strange error may occur.
   actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;
@@ -21,27 +20,20 @@ protected:
 
 
 public:
-
-
   BTAction(std::string name) :
     as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
     action_name_(name)
   {
    // Starts the action server
     as_.start();
-
-
   }
 
   ~BTAction(void)
   {
-
-
   }
 
   void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
   {
-
     // publish info to the console for the user
     ROS_INFO("Starting Action");
 
@@ -64,14 +56,12 @@ public:
 
       ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
       i++;
-
    }
 
     if (i == 5)
     {
         set_status(SUCCESS);
     }
-
   }
 
 

@@ -26,7 +26,6 @@ bool isRunning = false;
 
 
  	while(command!=3){
-
 	ROS_INFO("Send a command: 1:start the action | 2:stop the action | 3:exit the program");
 	std::cin >> command;
 
@@ -55,13 +54,8 @@ bool isRunning = false;
 			default:
 			break;
 		}
-
-
-
-
 	}
 
 return 0;
-
 }
 

@@ -40,14 +40,12 @@ void drawEllipse(float xpos, float ypos, float xradius, float yradius)
          // convert degrees into radians
         float degInRad = i*DEG2RAD;
         glVertex2d(xpos+cos(degInRad)*xradius,  ypos + sin(degInRad)*yradius);
-
     }
     glEnd();
 }
 
 void drawString (void * font, char *string, float x, float y, float z)
 {
-
     renderBitmapString(x, y, font, string);
 }
 
@@ -64,7 +62,6 @@ void drawString (void * font, char *string, float x, float y, float z)
 
 int compute_node_lines(const char *string)
 {
-
     const char *c;
     int i = 0;
     int new_line_num = 1;
@@ -84,7 +81,6 @@ int compute_node_lines(const char *string)
 
 int compute_max_width(const char *string)
 {
-
     const char *current_char;
     int current_line_width = 0;
     int max_width = 0;
@@ -92,7 +88,6 @@ int compute_max_width(const char *string)
 
     glRasterPos2f(x, y);
     for (current_char = string; *current_char != '\0'; current_char++) {
-
         if((*current_char == '\n') || ((*current_char == ' ' && current_line_width > 6) || current_line_width > 9))
         {
             if(current_line_width > max_width)
@@ -105,7 +100,6 @@ int compute_max_width(const char *string)
         else
         {
             // max_width++;
-
         }
         current_line_width++;
     }
@@ -140,7 +134,6 @@ void renderBitmapString(float x, float y, void *font, const char *string)
 
 void draw_node(float x, float y, int node_type, const char *leafName, int status)
 {
-
     float NODE_WIDTH = 0.04;
     float NODE_HEIGHT = 0.02;
     switch (node_type)
@@ -179,9 +172,6 @@ void draw_node(float x, float y, int node_type, const char *leafName, int status
         NODE_HEIGHT = 0.02*compute_node_lines(leafName);
         std::string st(leafName, 0, 15);
         NODE_WIDTH = 0.02*compute_max_width(leafName);
-
-
-
      }
         renderBitmapString((x  + 2*0.015), (y - 0.01), font, leafName);
         break;
@@ -257,8 +247,6 @@ void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat 
         glVertex3f(child_x, child_y+child_size, 0);
 
     glEnd();
-
-
 }
 
 // draw the edge connecting one node to the other
@@ -282,7 +270,6 @@ void keyboard(unsigned char key, int x, int y)
 
 
 void resize(int width, int height) {
-
 }
 
 
@@ -295,7 +282,6 @@ void drawCircle(float radius)
 
    for (int i=0; i<= 360; i++)
    {
-
       float degInRad = i*3.14142/180;
       glVertex2f(cos(degInRad)*radius, sin(degInRad)*radius);
    }
@@ -306,21 +292,16 @@ void drawCircle(float radius)
 
 void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offset )
 {
-
     // x_offset*pow(2,tree->Depth()-1)
    // GLfloat x_space = 0.01;
 
     BT::ControlNode* d = dynamic_cast<BT::ControlNode*> (tree);
     if (d == NULL)
     {  // if it is a leaf node, draw it
-
-
         draw_node(x_pos , (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(), tree->get_color_status());
-
     }
     else
     {  // if it is a control flow node, draw it and its children
-
         // setpositions(tree, x_pos , y_pos, x_offset , 0.1 );
         draw_node((GLfloat) x_pos, (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(), tree->get_color_status());
 
@@ -337,8 +318,6 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
 
         for (int i = 0; i < M; i++)
         {
-
-
             if(children[i]->DrawType() != BT::ACTION && children[i]->DrawType() != BT::CONDITION)
             {
                 current_x_end = 0.04;
@@ -346,21 +325,17 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
             }
             else
             {
-
                 current_x_end = 0.02*compute_max_width(children[i]->get_name().c_str());
                 children_x_middle_relative.push_back(current_x_end/2);
             }
 
             if (i < M-1)
             {
-
                 max_x_end = max_x_end + current_x_end + x_space;
             }
             else
             {
-
                 max_x_end = max_x_end + current_x_end;
-
             }
             children_x_end.push_back(max_x_end);
         }
@@ -389,10 +364,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
             }
         }
         // exit(0);
-
-
         // return x_shift_new + (x_min+x_max)/2;
-
     }
 }
 
@@ -402,7 +374,6 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
 
 void display()
 {
-
     glClearColor( r_color, g_color, b_color, 0.1);
 
     // clear the draw buffer .
@@ -413,14 +384,10 @@ void display()
 
     glutSwapBuffers();
     glutPostRedisplay();
-
 }
 
 
 void processSpecialKeys(int key, int xx, int yy) {
-
-
-
     switch (key) {
         case GLUT_KEY_UP :
             y +=  fraction;
@@ -466,7 +433,6 @@ void processSpecialKeys(int key, int xx, int yy) {
         }else
         {
             glScalef( 1.0f, 1.0f, 1.0f );
-
         }
             break;
         case GLUT_KEY_END:
@@ -474,8 +440,6 @@ void processSpecialKeys(int key, int xx, int yy) {
         zoom -=zoom_fraction;
 
         break;
-
-
     }
 }
 
@@ -535,7 +499,6 @@ void drawTree(BT::ControlNode* tree_)
     glutMainLoop();             // Enter main event loop
 
     // ***************************ENDOF BT VISUALIZATION ****************************
-
 }
 
 

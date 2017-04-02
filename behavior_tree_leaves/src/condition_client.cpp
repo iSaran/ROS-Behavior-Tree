@@ -26,7 +26,6 @@ bool isRunning = false;
 
 
  	while(command!=3){
-
     ROS_INFO("Send a command: 1:Evaluate the condition | 3:exit the program");
 	std::cin >> command;
 
@@ -55,14 +54,9 @@ bool isRunning = false;
 			default:
 			break;
 		}
-
-
-
-
 	}
 
 return 0;
-
 }
 /*
 

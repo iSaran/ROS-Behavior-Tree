@@ -26,5 +26,4 @@ void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)
         }
           std::this_thread::sleep_for(std::chrono::milliseconds(TickPeriod_milliseconds));
     }
-
 }

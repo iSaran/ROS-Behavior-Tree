@@ -3,15 +3,12 @@
 
 BT::SequenceNode::SequenceNode(std::string name) : ControlNode::ControlNode(name)
 {
-
 }
 
 BT::SequenceNode::~SequenceNode() {}
 
 BT::ReturnStatus BT::SequenceNode::Tick()
 {
-
-
     // gets the number of children. The number could change if, at runtime, one edits the tree.
     N_of_children_ = children_nodes_.size();
 
@@ -56,7 +53,6 @@ BT::ReturnStatus BT::SequenceNode::Tick()
             // If the  child status is not success, halt the next children and return the status to your parent.
             if(child_i_status_ == BT::FAILURE)
             {
-
                 children_nodes_[i]->set_status(BT::IDLE);  // the child goes in idle if it has returned failure.
             }
 
@@ -76,8 +72,6 @@ BT::ReturnStatus BT::SequenceNode::Tick()
             }
         }
     }
-
-
 }
 
 

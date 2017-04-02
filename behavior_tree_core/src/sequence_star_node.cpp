@@ -89,8 +89,6 @@ void BT::SequenceStarNode::Exec()
                 // 3) if the child state is not a success:
                 if(children_states_[i] != BT::SUCCESS)
                 {
-
-
                     // 3.1) the node state is equal to it;
                     SetNodeState(children_states_[i]);
                     // 3.2) state reset;
@@ -109,11 +107,7 @@ void BT::SequenceStarNode::Exec()
                 {
                     i++;
                 }
-
-
-
             }
-
             if (i == N_of_children_)
             {
                 // 4) if all of its children return "success":
@@ -126,8 +120,6 @@ void BT::SequenceStarNode::Exec()
 
                 std::cout << get_name() << " returning " << BT::SUCCESS << "!" << std::endl;
             }
-
-
         }
         else
         {
@@ -137,11 +129,8 @@ void BT::SequenceStarNode::Exec()
             HaltChildren(0);
             // Resetting the node state
             WriteState(BT::IDLE);
-
         }
-
     }
-
 }
 
 

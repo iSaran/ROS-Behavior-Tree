@@ -3,7 +3,6 @@
 
 BT::FallbackNode::FallbackNode(std::string name) : ControlNode::ControlNode(name)
 {
-
 }
 
 BT::FallbackNode::~FallbackNode() {}
@@ -11,8 +10,6 @@ BT::FallbackNode::~FallbackNode() {}
 BT::ReturnStatus BT::FallbackNode::Tick()
 {
     {
-
-
         // gets the number of children. The number could change if, at runtime, one edits the tree.
         N_of_children_ = children_nodes_.size();
 
@@ -41,11 +38,9 @@ BT::ReturnStatus BT::FallbackNode::Tick()
                     {
                         child_i_status_ = children_nodes_[i]->get_status();
                         std::this_thread::sleep_for(std::chrono::milliseconds(10));
-
                     }
                     while(child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
                 }
-
             }
             else
             {
@@ -56,10 +51,8 @@ BT::ReturnStatus BT::FallbackNode::Tick()
             // Ponderate on which status to send to the parent
             if(child_i_status_ != BT::FAILURE)
             {
-
                 if(child_i_status_ == BT::SUCCESS)
                 {
-
                     children_nodes_[i]->set_status(BT::IDLE);  // the child goes in idle if it has returned success.
                 }
 
@@ -81,10 +74,7 @@ BT::ReturnStatus BT::FallbackNode::Tick()
                 }
             }
         }
-
-
     }
-
 }
 
 int BT::FallbackNode::DrawType()

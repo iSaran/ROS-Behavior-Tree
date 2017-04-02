@@ -11,11 +11,8 @@ BT::ConditionTestNode::~ConditionTestNode() {}
 
 BT::ReturnStatus BT::ConditionTestNode::Tick()
 {
-
-
     //    while(true)
     {
-	
         // Waiting for a tick to come
      //   tick_engine.wait();
 
@@ -38,14 +35,8 @@ BT::ReturnStatus BT::ConditionTestNode::Tick()
             set_status(BT::FAILURE);
             std::cout << get_name() << " returning Failure" << BT::FAILURE << "!" << std::endl;
             return BT::FAILURE;
-
         }
-	
-
-
     }
-
-
 }
 
 

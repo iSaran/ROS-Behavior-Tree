@@ -11,7 +11,6 @@ enum Status {RUNNING, SUCCESS, FAILURE};
 class BTAction
 {
 protected:
-
   ros::NodeHandle nh_;
   // NodeHandle instance must be created before this line. Otherwise strange error may occur.
   actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;
@@ -23,7 +22,6 @@ protected:
 
 
 public:
-
   BTAction(std::string name) :
     as_(nh_, name, boost::bind(&BTAction::executeCB, this, _1), false),
     action_name_(name)
@@ -31,13 +29,10 @@ public:
  // start the action server (action in sense of Actionlib not BT action)
     as_.start();
      ROS_INFO("Condition Server Started");
-
-
   }
 
   ~BTAction(void)
   {
-
   }
   void executeCB(const behavior_tree_core::BTGoalConstPtr &goal)
   {

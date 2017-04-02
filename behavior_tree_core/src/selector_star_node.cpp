@@ -87,8 +87,6 @@ void BT::SelectorStarNode::Exec()
                 // 3) if the child state is not a success:
                 if(children_states_[i] != BT::FAILURE)
                 {
-
-
                     // 3.1) the node state is equal to it;
                     SetNodeState(children_states_[i]);
 

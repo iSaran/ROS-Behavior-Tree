@@ -101,7 +101,6 @@ void BT::DecoratorRetryNode::Exec()
                     {
                         children_nodes_[0]->ResetColorState();
                         TryIndx_++;
-
                     }
 
                     if(children_states_[0] == BT::FAILURE && TryIndx_ < NTries_)
@@ -117,11 +116,9 @@ void BT::DecoratorRetryNode::Exec()
                         // 3.2) state reset;
                         WriteState(BT::IDLE);
                         std::cout << get_name() << " returning " << children_states_[0] << "!" << std::endl;
-
                     }
                 }
             }
-
         }
         else
         {

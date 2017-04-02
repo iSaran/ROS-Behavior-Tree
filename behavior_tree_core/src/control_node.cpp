@@ -5,7 +5,6 @@ BT::ControlNode::ControlNode(std::string name) : TreeNode::TreeNode(name)
 {
     type_ = BT::CONTROL_NODE;
     ReturnStatus child_i_status_ = BT::IDLE;
-
 }
 
 BT::ControlNode::~ControlNode() {}
@@ -47,7 +46,6 @@ std::vector<BT::TreeNode*> BT::ControlNode::GetChildren()
 
 void BT::ControlNode::ResetColorState()
 {
-
     set_color_status(BT::IDLE);
     for(unsigned int i = 0; i < children_nodes_.size(); i++)
     {
@@ -67,12 +65,10 @@ void BT::ControlNode::HaltChildren(int i){
         }
         else
         {
-
             if (children_nodes_[j]->get_status() == BT::RUNNING)
             {
                 DEBUG_STDOUT("SENDING HALT TO CHILD " << children_nodes_[j]-> get_name());
                 children_nodes_[j]->Halt();
-
             }
             else
             {
@@ -80,7 +76,6 @@ void BT::ControlNode::HaltChildren(int i){
             }
         }
     }
-
 }
 
 int BT::ControlNode::Depth()
@@ -94,7 +89,6 @@ int BT::ControlNode::Depth()
            {
                depMax = dep;
            }
-
         }
       return 1 + depMax;
 }

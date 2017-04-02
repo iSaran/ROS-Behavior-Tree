@@ -76,7 +76,6 @@ int main(int argc, char **argv)
 //        }
 
         Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
-
 }
     catch (BT::BehaviorTreeException& Exception)
     {

@@ -11,8 +11,6 @@ BT::DecoratorNegationNode::~DecoratorNegationNode() {}
 
 void BT::DecoratorNegationNode::Exec()
 {
-
-
     // Waiting for the first tick to come
     tick_engine.wait();
 
@@ -103,7 +101,6 @@ void BT::DecoratorNegationNode::Exec()
                     WriteState(BT::IDLE);
 
                     std::cout << get_name() << " returning " << BT::SUCCESS << "!" << std::endl;
-
                 } else
                 // 5) if the child state is  running
                 {
@@ -113,7 +110,6 @@ void BT::DecoratorNegationNode::Exec()
                     // 5.2) state reset;
                     WriteState(BT::IDLE);
                 }
-
         }
         else
         {
