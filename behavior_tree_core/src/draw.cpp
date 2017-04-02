@@ -26,7 +26,7 @@ int depth;
 double zoom = 1.0f;
 
 float fraction = 0.1f;
-float zoom_fraction =0.1f;
+float zoom_fraction = 0.1f;
 
 
 
@@ -35,7 +35,7 @@ void drawEllipse(float xpos, float ypos, float xradius, float yradius)
 {
     glBegin(GL_LINE_LOOP);
 
-    for(int i=0; i < 359; i++)
+    for(int i = 0; i < 359; i++)
     {
          // convert degrees into radians
         float degInRad = i*DEG2RAD;
@@ -437,7 +437,7 @@ void processSpecialKeys(int key, int xx, int yy) {
             break;
         case GLUT_KEY_END:
         glScalef( 1.0f  - zoom_fraction, 1.0f  - zoom_fraction, 1.0f );
-        zoom -=zoom_fraction;
+        zoom -= zoom_fraction;
 
         break;
     }

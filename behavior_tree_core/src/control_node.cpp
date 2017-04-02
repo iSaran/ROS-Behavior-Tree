@@ -54,7 +54,7 @@ void BT::ControlNode::ResetColorState()
 }
 
 void BT::ControlNode::HaltChildren(int i){
-    for(unsigned int j=i; j<children_nodes_.size(); j++)
+    for(unsigned int j = i; j < children_nodes_.size(); j++)
     {
         // TODO FIX this
         //        if (children_nodes_[j]->get_type() != BT::CONDITION_NODE  && children_nodes_[j]->get_status() != BT::IDLE)

@@ -104,7 +104,7 @@ void BT::SelectorStarNode::Exec()
                     break;
                 } else if(children_states_[i] == BT::FAILURE)  // if child i has failed the selector star node can tick the next child
                 {
-                    i ++;
+                    i++;
                 }
             }
 

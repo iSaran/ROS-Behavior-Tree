@@ -20,12 +20,12 @@ int main (int argc, char **argv)
   // goal.order = 20;
 
 
-int command=0;
+int command = 0;
 bool isRunning = false;
 
 
 
-  while(command!=3){
+  while(command != 3){
   ROS_INFO("Send a command: 1:start the action | 2:stop the action | 3:exit the program");
   std::cin >> command;
 
@@ -35,7 +35,7 @@ bool isRunning = false;
                     ROS_INFO("I am running the request");
             ac.sendGoal(goal);
           // ac.ClientGoalHandle();
-                    isRunning=true;
+                    isRunning = true;
           // ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());
                      ROS_INFO("Action finished, status: %d", node_result.status);
@@ -49,7 +49,7 @@ bool isRunning = false;
       case 2: 
                 ROS_INFO("I am cancelling the request");
         ac.cancelGoal();
-        isRunning=false;
+        isRunning = false;
       break;
       default:
       break;
