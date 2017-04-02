@@ -32,7 +32,7 @@ bool isRunning = false;
 
     switch (command)
     {
-      case 1: 
+      case 1:
                 if (!isRunning)
                 {
                     ROS_INFO("I am running the request");
@@ -73,10 +73,10 @@ return 0;
 
   //wait for the action to return
   //bool finished_before_timeout = ac.waitForResult(ros::Duration(30.0));
- ros::Duration(0.5).sleep(); 
+ ros::Duration(0.5).sleep();
     ROS_INFO("I am cancelling the request");
 ac.cancelGoal();
- ros::Duration(0.5).sleep(); 
+ ros::Duration(0.5).sleep();
   ac.sendGoal(goal);
 
 bool finished_before_timeout = ac.waitForResult(ros::Duration(30.0));

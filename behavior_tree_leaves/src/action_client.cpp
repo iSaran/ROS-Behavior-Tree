@@ -32,7 +32,7 @@ bool isRunning = false;
 
     switch (command)
     {
-      case 1: 
+      case 1:
                 if (!isRunning)
                 {
                     ROS_INFO("I am running the request");
@@ -51,7 +51,7 @@ bool isRunning = false;
                      ROS_INFO("Action finished, status: %d", node_result.status);
                 }
       break;
-      case 2: 
+      case 2:
                 ROS_INFO("I am cancelling the request");
         ac.cancelGoal();
         isRunning = false;
