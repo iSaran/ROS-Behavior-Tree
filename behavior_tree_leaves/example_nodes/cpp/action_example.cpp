@@ -24,7 +24,7 @@ public:
     as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
     action_name_(name)
   {
-   // Starts the action server
+    // Starts the action server
     as_.start();
   }
 
@@ -56,7 +56,7 @@ public:
 
       ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
       i++;
-   }
+    }
 
     if (i == 5)
     {

@@ -279,22 +279,22 @@ void resize(int width, int height)
 
 void drawCircle(float radius)
 {
-   glBegin(GL_LINE_LOOP);
+  glBegin(GL_LINE_LOOP);
 
-   for (int i=0; i<= 360; i++)
-   {
-      float degInRad = i*3.14142/180;
-      glVertex2f(cos(degInRad)*radius, sin(degInRad)*radius);
-   }
+  for (int i=0; i<= 360; i++)
+  {
+     float degInRad = i*3.14142/180;
+     glVertex2f(cos(degInRad)*radius, sin(degInRad)*radius);
+  }
 
-   glEnd();
+  glEnd();
 }
 
 
 void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offset )
 {
     // x_offset*pow(2,tree->Depth()-1)
-   // GLfloat x_space = 0.01;
+    // GLfloat x_space = 0.01;
 
     BT::ControlNode* d = dynamic_cast<BT::ControlNode*> (tree);
     if (d == NULL)
@@ -454,18 +454,18 @@ void processSpecialKeys(int key, int xx, int yy)
 
 void mouse(int button, int state, int x, int y)
 {
-   // Wheel reports as button 3(scroll up) and button 4(scroll down)
-   if ((button == 1) || (button == 2))  // It's a wheel event
-   {
-       // Each wheel event reports like a button click, GLUT_DOWN then GLUT_UP
-       if (state == GLUT_UP) return;  // Disregard redundant GLUT_UP events
-     //  printf("Scroll %s At %d %d\n", (button == 3) ? "Up" : "Down", x, y);
-       exit(9);
-   }
-   else
-   {  // normal button event
-      // printf("Button %s At %d %d\n", (state == GLUT_DOWN) ? "Down" : "Up", x, y);
-   }
+  // Wheel reports as button 3(scroll up) and button 4(scroll down)
+  if ((button == 1) || (button == 2))  // It's a wheel event
+  {
+      // Each wheel event reports like a button click, GLUT_DOWN then GLUT_UP
+      if (state == GLUT_UP) return;  // Disregard redundant GLUT_UP events
+    //  printf("Scroll %s At %d %d\n", (button == 3) ? "Up" : "Down", x, y);
+      exit(9);
+  }
+  else
+  {  // normal button event
+     // printf("Button %s At %d %d\n", (state == GLUT_DOWN) ? "Down" : "Up", x, y);
+  }
 }
 
 

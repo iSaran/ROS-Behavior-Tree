@@ -24,7 +24,7 @@ public:
     as_(nh_, name, boost::bind(&BTAction::executeCB, this, _1), false),
     action_name_(name)
   {
-   // Starts the action server
+    // Starts the action server
     as_.start();
   }
 
@@ -62,7 +62,7 @@ public:
 /*
           HERE THE CODE TO EXECUTE AS LONG AS THE BEHAVIOR TREE DOES NOT HALT THE ACTION
 */
-   }
+    }
     // If the action succeeded
          setStatus(SUCCESS);
     // If the action Failed

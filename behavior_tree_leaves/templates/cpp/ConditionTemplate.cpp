@@ -26,9 +26,9 @@ public:
     as_(nh_, name, boost::bind(&BTAction::executeCB, this, _1), false),
     action_name_(name)
   {
- // start the action server (action in sense of Actionlib not BT action)
+    // start the action server (action in sense of Actionlib not BT action)
     as_.start();
-     ROS_INFO("Condition Server Started");
+    ROS_INFO("Condition Server Started");
   }
 
   ~BTAction(void)
@@ -71,7 +71,7 @@ public:
           break;
         }
     }
-  };
+};
 
 int main(int argc, char** argv)
 {
