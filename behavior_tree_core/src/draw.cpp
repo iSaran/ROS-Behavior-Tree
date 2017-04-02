@@ -9,7 +9,7 @@ BT::ControlNode* tree;
 bool init = false;
 
 
-void * font_array[3] = {GLUT_BITMAP_8_BY_13,GLUT_BITMAP_8_BY_13,GLUT_BITMAP_8_BY_13};
+void * font_array[3] = {GLUT_BITMAP_8_BY_13, GLUT_BITMAP_8_BY_13, GLUT_BITMAP_8_BY_13};
 void * font = font_array[0];
 
 float x = 0.0;
@@ -31,7 +31,7 @@ float zoom_fraction =0.1f;
 
 
 
-void drawEllipse(float xpos, float ypos,float xradius, float yradius)
+void drawEllipse(float xpos, float ypos, float xradius, float yradius)
 {
     glBegin(GL_LINE_LOOP);
 
@@ -48,7 +48,7 @@ void drawEllipse(float xpos, float ypos,float xradius, float yradius)
 void drawString (void * font, char *string, float x, float y, float z)
 {
 
-    renderBitmapString(x,y, font,string);
+    renderBitmapString(x, y, font, string);
 }
 
 //void drawString (void * font, char *s, float x, float y, float z)
@@ -117,7 +117,7 @@ int compute_max_width(const char *string)
     return max_width;
 }
 
-void renderBitmapString(float x, float y, void *font,const char *string)
+void renderBitmapString(float x, float y, void *font, const char *string)
 {
     const char *c;
     int i = 0;
@@ -166,24 +166,24 @@ void draw_node(float x, float y, int node_type, const char *leafName, int status
     case BT::ACTION:
        {
         NODE_HEIGHT = 0.02*(compute_node_lines(leafName));
-            std::string st(leafName,0, 15);
+            std::string st(leafName, 0, 15);
             NODE_WIDTH = 0.02*compute_max_width(leafName);
 //            for (unsigned int i = 0; i < st.size(); i++)
 //              NODE_WIDTH +=  0.01;
         }
-        renderBitmapString((x +0.015), (y - 0.01), font,leafName);
+        renderBitmapString((x +0.015), (y - 0.01), font, leafName);
        // glColor3f(0.2, 1.0, 0.2);
         break;
     case BT::CONDITION:
     {
         NODE_HEIGHT = 0.02*compute_node_lines(leafName);
-        std::string st(leafName,0, 15);
+        std::string st(leafName, 0, 15);
         NODE_WIDTH = 0.02*compute_max_width(leafName);
 
 
 
      }
-        renderBitmapString((x  + 2*0.015), (y - 0.01), font,leafName);
+        renderBitmapString((x  + 2*0.015), (y - 0.01), font, leafName);
         break;
     default: break;
     }
@@ -244,15 +244,15 @@ void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat 
     GLfloat bottom_spacing = 0.1;
     GLfloat above_spacing = 0.04;
     glBegin(GL_LINES);
-    glVertex3f(parent_x, parent_y-parent_size,0);
-    glVertex3f(parent_x, child_y+child_size + above_spacing,0);
+    glVertex3f(parent_x, parent_y-parent_size, 0);
+    glVertex3f(parent_x, child_y+child_size + above_spacing, 0);
     glEnd();
         glBegin(GL_LINES);
-    glVertex3f(parent_x, child_y+child_size + above_spacing,0);
-    glVertex3f(child_x, child_y+child_size + above_spacing,0);
+    glVertex3f(parent_x, child_y+child_size + above_spacing, 0);
+    glVertex3f(child_x, child_y+child_size + above_spacing, 0);
     glEnd();
         glBegin(GL_LINES);
-    glVertex3f(child_x, child_y+child_size + above_spacing,0);
+    glVertex3f(child_x, child_y+child_size + above_spacing, 0);
 
         glVertex3f(child_x, child_y+child_size, 0);
 
@@ -297,7 +297,7 @@ void drawCircle(float radius)
    {
 
       float degInRad = i*3.14142/180;
-      glVertex2f(cos(degInRad)*radius,sin(degInRad)*radius);
+      glVertex2f(cos(degInRad)*radius, sin(degInRad)*radius);
    }
 
    glEnd();
@@ -375,7 +375,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
         {
             if(i > 0)
             {
-                updateTree(children[i], x_shift + children_x_end.at(i-1) , y_pos - y_offset  ,y_offset );
+                updateTree(children[i], x_shift + children_x_end.at(i-1) , y_pos - y_offset  , y_offset );
 
                 draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_end.at(i-1) + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
 
@@ -385,7 +385,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
             {
                 draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
 
-                updateTree(children[i], x_shift , y_pos - y_offset  ,y_offset );
+                updateTree(children[i], x_shift , y_pos - y_offset  , y_offset );
             }
         }
         //exit(0);
@@ -461,16 +461,16 @@ void processSpecialKeys(int key, int xx, int yy) {
         case GLUT_KEY_HOME:
         if (zoom < 1.0f)
         {
-            glScalef( 1.0f  +zoom_fraction ,1.0f  +zoom_fraction,1.0f );
+            glScalef( 1.0f  +zoom_fraction , 1.0f  +zoom_fraction, 1.0f );
             zoom +=zoom_fraction;
         }else
         {
-            glScalef( 1.0f,1.0f,1.0f );
+            glScalef( 1.0f, 1.0f, 1.0f );
 
         }
             break;
         case GLUT_KEY_END:
-        glScalef( 1.0f  - zoom_fraction,1.0f  - zoom_fraction,1.0f );
+        glScalef( 1.0f  - zoom_fraction, 1.0f  - zoom_fraction, 1.0f );
         zoom -=zoom_fraction;
 
         break;
@@ -516,7 +516,7 @@ void drawTree(BT::ControlNode* tree_)
     tree = tree_;
     depth = tree->Depth();
 
-    glutInitWindowSize(1024,860);
+    glutInitWindowSize(1024, 860);
 
     glutCreateWindow("Behavior Tree");  // Create a window
     //glutMouseFunc(mouse);

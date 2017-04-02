@@ -39,7 +39,7 @@ bool isRunning = false;
                     isRunning=true;
                     ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());
-                     ROS_INFO("Condition evaluated, status: %d",node_result.status);
+                     ROS_INFO("Condition evaluated, status: %d", node_result.status);
                 }else{
                     ROS_INFO("I am re-running the request");
                     ac.cancelGoal();
@@ -47,7 +47,7 @@ bool isRunning = false;
                     ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());
 
-                     ROS_INFO("Condition evaluated, status: %d",node_result.status);
+                     ROS_INFO("Condition evaluated, status: %d", node_result.status);
                 }
 			break;
             case 2:

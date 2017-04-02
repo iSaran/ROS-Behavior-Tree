@@ -58,7 +58,7 @@ namespace BT
     // Enumerates the possible types of a node, for drawinf we have do discriminate whoich control node it is:
 
     enum NodeType {ACTION_NODE, CONDITION_NODE, CONTROL_NODE};
-    enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION,DECORATOR};
+    enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR};
     // Enumerates the states every node can be in after execution during a particular
     // time step:
     // - "Success" indicates that the node has completed running during this time step;
@@ -76,7 +76,7 @@ namespace BT
     // - "FAIL_ON_ALL" indicates that all of the node's children must fail before it
     //   returns failure.
     enum FailurePolicy {FAIL_ON_ONE, FAIL_ON_ALL};
-    enum ResetPolity   {ON_SUCCESS_OR_FAILURE,ON_SUCCESS, ON_FAILURE};
+    enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};
 
     // Enumerates the options for when a parallel node is considered to have succeeded:
     // - "SUCCEED_ON_ONE" indicates that the node will return success as soon as one

@@ -5,7 +5,7 @@
 
 
 
-enum Status {RUNNING,SUCCESS, FAILURE};
+enum Status {RUNNING, SUCCESS, FAILURE};
 
 
 class BTAction
@@ -76,7 +76,7 @@ public:
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "condition");
-      ROS_INFO(" Enum: %d",RUNNING);
+      ROS_INFO(" Enum: %d", RUNNING);
       ROS_INFO(" condition Ready for Ticks");
   BTAction bt_action(ros::this_node::getName());
   ros::spin();

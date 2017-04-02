@@ -290,7 +290,7 @@ struct SimpleParallelTest : testing::Test
         action_2 = new BT::ActionTestNode("action 2");
         condition_2 = new BT::ConditionTestNode("condition 2");
 
-        root = new BT::ParallelNode("par",4);
+        root = new BT::ParallelNode("par", 4);
 
         root->AddChild(condition_1);
         root->AddChild(action_1);
@@ -331,9 +331,9 @@ struct ComplexParallelTest : testing::Test
         action_3 = new BT::ActionTestNode("action 3");
         condition_3 = new BT::ConditionTestNode("condition 3");
 
-        root = new BT::ParallelNode("root",2);
-        parallel_1 = new BT::ParallelNode("par1",3);
-        parallel_2 = new BT::ParallelNode("par2",1);
+        root = new BT::ParallelNode("root", 2);
+        parallel_1 = new BT::ParallelNode("par1", 3);
+        parallel_2 = new BT::ParallelNode("par2", 1);
 
 
 

@@ -2,7 +2,7 @@
 
 
 
-BT::ROSAction::ROSAction(std::string name) : action_client_(name,true), ActionNode::ActionNode(name)
+BT::ROSAction::ROSAction(std::string name) : action_client_(name, true), ActionNode::ActionNode(name)
 {
 
 
@@ -33,7 +33,7 @@ void BT::ROSAction::WaitForTick()
           // Running state
           node_result.status = BT::RUNNING;
           // Perform action...
-          ROS_INFO("I am running the request to %s",get_name().c_str());
+          ROS_INFO("I am running the request to %s", get_name().c_str());
           action_client_.sendGoal(goal);
           do
           {

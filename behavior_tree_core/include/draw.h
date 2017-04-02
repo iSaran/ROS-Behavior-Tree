@@ -20,7 +20,7 @@ void draw_status(float x, float y, int node_status);
 
 void drawString (void * font, char *string, float x, float y, float z);
 
-void renderBitmapString(float x, float y, void *font,const char *string);
+void renderBitmapString(float x, float y, void *font, const char *string);
 
 void draw_node(float x, float y, int node_type, const char *leafName, int status);
 
