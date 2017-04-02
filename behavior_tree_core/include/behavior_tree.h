@@ -1,5 +1,5 @@
-#ifndef BEHAVIORTREE_H
-#define BEHAVIORTREE_H
+#ifndef BEHAVIOR_TREE_H
+#define BEHAVIOR_TREE_H
 
 
 
@@ -15,8 +15,8 @@
 #include <fallback_node_with_memory.h>
 
 
-//#include <decorator_retry_node.h>
-//#include <decorator_negation_node.h>
+// #include <decorator_retry_node.h>
+// #include <decorator_negation_node.h>
 
 
 #include <actions/action_test_node.h>
@@ -41,7 +41,7 @@
 #include <mutex>
 
 
-void Execute(BT::ControlNode* root,int TickPeriod_milliseconds);
+void Execute(BT::ControlNode* root, int TickPeriod_milliseconds);
 
 
-#endif
+#endif  // BEHAVIOR_TREE_H

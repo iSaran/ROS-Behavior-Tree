@@ -1,5 +1,5 @@
-#ifndef ROSCONDITION_H
-#define ROSCONDITION_H
+#ifndef CONDITIONS_ROS_CONDITION_H
+#define CONDITIONS_ROS_CONDITION_H
 
 #include <condition_node.h>
 #include <actionlib/client/simple_action_client.h>
@@ -15,13 +15,12 @@ protected:
     behavior_tree_core::BTGoal goal;
 public:
     // Constructor
-    ROSCondition(std::string Name);
+    explicit ROSCondition(std::string Name);
     ~ROSCondition();
 
     // The method that is going to be executed by the thread
     ReturnStatus Tick();
-
 };
-}
+}  // namespace BT
 
-#endif
+#endif  // CONDITIONS_ROS_CONDITION_H

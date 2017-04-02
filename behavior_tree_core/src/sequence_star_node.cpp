@@ -21,15 +21,15 @@ void BT::SequenceStarNode::Exec()
 
     // Simulating a tick for myself
     tick_engine.tick();
-    i = 0; //I initialize the index of the child to tick
+    i = 0;  // I initialize the index of the child to tick
 
-    while(true)
+    while (true)
     {
         // Waiting for a tick to come
         tick_engine.wait();
 
 
-        if(ReadState() == BT::EXIT)
+        if (ReadState() == BT::EXIT)
         {
             i = 0;
             // The behavior tree is going to be destroied
@@ -87,17 +87,15 @@ void BT::SequenceStarNode::Exec()
                 }
 
                 // 3) if the child state is not a success:
-                if(children_states_[i] != BT::SUCCESS)
+                if (children_states_[i] != BT::SUCCESS)
                 {
-
-
                     // 3.1) the node state is equal to it;
                     SetNodeState(children_states_[i]);
                     // 3.2) state reset;
                     WriteState(BT::IDLE);
                     if (children_states_[i] == BT::FAILURE)
                     {
-                        i = 0; // Final state_ of rhe selector node. child index reinitialized
+                        i = 0;  // Final state_ of rhe selector node. child index reinitialized
                     }
 
 
@@ -105,20 +103,17 @@ void BT::SequenceStarNode::Exec()
 
                     // 3.4) the "for" loop must end here.
                     break;
-                } else if (children_states_[i] == BT::SUCCESS) //If the child i returns success, the sequence star node can tick the next child
-                {
+                }
+                else if (children_states_[i] == BT::SUCCESS)
+                {  // If the child i returns success, the sequence star node can tick the next child
                     i++;
                 }
-
-
-
             }
-
             if (i == N_of_children_)
             {
                 // 4) if all of its children return "success":
                 // 4.1) the node state must be "success";
-                SetNodeState(BT::SUCCESS); // Final state_ of rhe selector node. child index reinitialized
+                SetNodeState(BT::SUCCESS);  // Final state_ of rhe selector node. child index reinitialized
 
                 i = 0;
                 // 4.2) resetting the state;
@@ -126,8 +121,6 @@ void BT::SequenceStarNode::Exec()
 
                 std::cout << get_name() << " returning " << BT::SUCCESS << "!" << std::endl;
             }
-
-
         }
         else
         {
@@ -137,11 +130,8 @@ void BT::SequenceStarNode::Exec()
             HaltChildren(0);
             // Resetting the node state
             WriteState(BT::IDLE);
-
         }
-
     }
-
 }
 
 

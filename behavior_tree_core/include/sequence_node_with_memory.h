@@ -13,7 +13,7 @@ class SequenceNodeWithMemory : public ControlNode
 {
 public:
     // Constructor
-    SequenceNodeWithMemory(std::string name);
+    explicit SequenceNodeWithMemory(std::string name);
     SequenceNodeWithMemory(std::string name, int reset_policy);
     ~SequenceNodeWithMemory();
     int DrawType();
@@ -23,8 +23,7 @@ public:
 private:
     unsigned int current_child_idx_;
     unsigned int reset_policy_;
-
 };
-}
+}  // namespace BT
 
-#endif // SEQUENCE_NODE_WITH_MEMORY_H
+#endif  // SEQUENCE_NODE_WITH_MEMORY_H

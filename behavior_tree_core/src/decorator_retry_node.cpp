@@ -23,12 +23,12 @@ void BT::DecoratorRetryNode::Exec()
     // Simulating a tick for myself
     tick_engine.tick();
 
-    while(true)
+    while (true)
     {
         // Waiting for a tick to come
         tick_engine.wait();
 
-        if(ReadState() == BT::EXIT)
+        if (ReadState() == BT::EXIT)
         {
             // The behavior tree is going to be destroied
             return;
@@ -42,7 +42,7 @@ void BT::DecoratorRetryNode::Exec()
 
             TryIndx_ = 0;
             // For each child:
-            //for (i = 0; i<M; i++)
+            // for (i = 0; i<M; i++)
             {
                 if (children_nodes_[0]->get_type() == BT::ACTION_NODE)
                 {
@@ -86,7 +86,7 @@ void BT::DecoratorRetryNode::Exec()
                 }
 
                 // 3) if the child state is not a success:
-                if(children_states_[0] == BT::SUCCESS)
+                if (children_states_[0] == BT::SUCCESS)
                 {
                     SetNodeState(BT::SUCCESS);
 
@@ -97,14 +97,13 @@ void BT::DecoratorRetryNode::Exec()
                 }
                 else
                 {
-                    if(children_states_[0] == BT::FAILURE)
+                    if (children_states_[0] == BT::FAILURE)
                     {
                         children_nodes_[0]->ResetColorState();
                         TryIndx_++;
-
                     }
 
-                    if(children_states_[0] == BT::FAILURE && TryIndx_ < NTries_)
+                    if (children_states_[0] == BT::FAILURE && TryIndx_ < NTries_)
                     {
                         // 3.1) the node state is equal to running since I am rerunning the child
                         SetNodeState(BT::RUNNING);
@@ -117,11 +116,9 @@ void BT::DecoratorRetryNode::Exec()
                         // 3.2) state reset;
                         WriteState(BT::IDLE);
                         std::cout << get_name() << " returning " << children_states_[0] << "!" << std::endl;
-
                     }
                 }
             }
-
         }
         else
         {
@@ -139,7 +136,8 @@ void BT::DecoratorRetryNode::Exec()
 
                     std::cout << get_name() << " halting child  "  << "!" << std::endl;
                 }
-                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE && children_nodes_[0]->ReadState() == BT::RUNNING)
+                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE &&
+                         children_nodes_[0]->ReadState() == BT::RUNNING)
                 {
                     std::cout << get_name() << " trying halting child  "  << "..." << std::endl;
 
@@ -157,7 +155,8 @@ void BT::DecoratorRetryNode::Exec()
 
                     std::cout << get_name() << " halting of child  "  << " succedeed!" << std::endl;
                 }
-                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE && children_nodes_[0]->ReadState() != BT::IDLE)
+                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE &&
+                         children_nodes_[0]->ReadState() != BT::IDLE)
                 {
                     // if it's a action node that has finished its job:
                     // ticking it without saving its returning state;

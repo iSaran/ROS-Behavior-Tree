@@ -1,5 +1,5 @@
-#ifndef SEQUENCENODE_H
-#define SEQUENCENODE_H
+#ifndef SEQUENCE_NODE_H
+#define SEQUENCE_NODE_H
 
 #include <control_node.h>
 
@@ -9,12 +9,12 @@ class SequenceNode : public ControlNode
 {
 public:
     // Constructor
-    SequenceNode(std::string name);
+    explicit SequenceNode(std::string name);
     ~SequenceNode();
     int DrawType();
     // The method that is going to be executed by the thread
     BT::ReturnStatus Tick();
 };
-}
+}  // namespace BT
 
-#endif
+#endif  // SEQUENCE_NODE_H

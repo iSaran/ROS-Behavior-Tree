@@ -1,5 +1,5 @@
-#ifndef LEAFNODE_H
-#define LEAFNODE_H
+#ifndef LEAF_NODE_H
+#define LEAF_NODE_H
 
 #include <vector>
 
@@ -7,15 +7,15 @@
 
 namespace BT
 {
-    class LeafNode : public TreeNode
-    {
-    protected:
-    public:
-        LeafNode(std::string name);
-        ~LeafNode();
-    void ResetColorState();
-    int Depth();
-    };
-}
+class LeafNode : public TreeNode
+{
+protected:
+public:
+    explicit LeafNode(std::string name);
+    ~LeafNode();
+void ResetColorState();
+int Depth();
+};
+}  // namespace BT
 
-#endif
+#endif  // LEAF_NODE_H

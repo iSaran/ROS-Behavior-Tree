@@ -5,7 +5,6 @@ BT::ControlNode::ControlNode(std::string name) : TreeNode::TreeNode(name)
 {
     type_ = BT::CONTROL_NODE;
     ReturnStatus child_i_status_ = BT::IDLE;
-
 }
 
 BT::ControlNode::~ControlNode() {}
@@ -47,19 +46,19 @@ std::vector<BT::TreeNode*> BT::ControlNode::GetChildren()
 
 void BT::ControlNode::ResetColorState()
 {
-
     set_color_status(BT::IDLE);
-    for(unsigned int i = 0; i < children_nodes_.size(); i++)
+    for (unsigned int i = 0; i < children_nodes_.size(); i++)
     {
         children_nodes_[i]->ResetColorState();
     }
 }
 
-void BT::ControlNode::HaltChildren(int i){
-    for(unsigned int j=i; j<children_nodes_.size(); j++)
+void BT::ControlNode::HaltChildren(int i)
+{
+    for (unsigned int j = i; j < children_nodes_.size(); j++)
     {
-        //TODO FIX this
-        //        if (children_nodes_[j]->get_type() != BT::CONDITION_NODE  && children_nodes_[j]->get_status() != BT::IDLE)
+        // TODO(...) FIX this
+        // if (children_nodes_[j]->get_type() != BT::CONDITION_NODE  && children_nodes_[j]->get_status() != BT::IDLE)
 
         if (children_nodes_[j]->get_type() == BT::CONDITION_NODE)
         {
@@ -67,20 +66,18 @@ void BT::ControlNode::HaltChildren(int i){
         }
         else
         {
-
             if (children_nodes_[j]->get_status() == BT::RUNNING)
             {
                 DEBUG_STDOUT("SENDING HALT TO CHILD " << children_nodes_[j]-> get_name());
                 children_nodes_[j]->Halt();
-
             }
             else
             {
-                DEBUG_STDOUT("NO NEED TO HALT " << children_nodes_[j]-> get_name() << "STATUS" << children_nodes_[j]->get_status());
+                DEBUG_STDOUT("NO NEED TO HALT " << children_nodes_[j]-> get_name()
+                                                << "STATUS" << children_nodes_[j]->get_status());
             }
         }
     }
-
 }
 
 int BT::ControlNode::Depth()
@@ -94,7 +91,6 @@ int BT::ControlNode::Depth()
            {
                depMax = dep;
            }
-
         }
       return 1 + depMax;
 }

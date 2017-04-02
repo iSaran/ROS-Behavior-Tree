@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   behavior_tree_core
   roslaunch
-
+  roslint
 )
 roslaunch_add_file_check(launch)
 ## System dependencies are found with CMake's conventions
@@ -202,6 +202,11 @@ add_dependencies(
   behavior_tree_core_generate_messages_cpp
 )
 
+## Run roslint with `catkin_make roslint`
+# Filter out errors with respect C++11 (for ROS-indigo)
+set(ROSLINT_CPP_OPTS "--filter=-build/c++11,-build/include_what_you_use,-legal/copyright")
+# Roslint macro
+roslint_cpp()
 
 
 

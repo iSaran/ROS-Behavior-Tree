@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   roslaunch
   genmsg
-
+  roslint
 )
 
 
@@ -113,4 +113,8 @@ add_dependencies(gtest_ros behavior_tree_core_generate_messages_cpp)
 #target_link_libraries(ros_test ${catkin_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
 #add_dependencies(ros_test behavior_tree_core_generate_messages_cpp)
 
-
+## Run roslint with `catkin_make roslint`
+# Filter out errors with respect C++11 (for ROS-indigo)
+set(ROSLINT_CPP_OPTS "--filter=-build/c++11,-build/include_what_you_use,-legal/copyright")
+# Roslint macro
+roslint_cpp()

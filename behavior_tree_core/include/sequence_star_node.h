@@ -1,20 +1,20 @@
-#ifndef SEQUENCESTARNODE_H
-#define SEQUENCESTARNODE_H
+#ifndef SEQUENCE_STAR_NODE_H
+#define SEQUENCE_STAR_NODE_H
 
 #include <control_node.h>
 
 namespace BT
 {
-    class SequenceStarNode : public ControlNode
-    {
-    public:
-        // Constructor
-        SequenceStarNode(std::string name);
-        ~SequenceStarNode();
-    int DrawType();
-        // The method that is going to be executed by the thread
-        void Exec();
-    };
-}
+class SequenceStarNode : public ControlNode
+{
+public:
+    // Constructor
+    explicit SequenceStarNode(std::string name);
+    ~SequenceStarNode();
+int DrawType();
+    // The method that is going to be executed by the thread
+    void Exec();
+};
+}  // namespace BT
 
-#endif
+#endif  // SEQUENCE_STAR_NODE_H

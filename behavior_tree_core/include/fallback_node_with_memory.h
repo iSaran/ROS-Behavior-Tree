@@ -9,7 +9,7 @@ class FallbackNodeWithMemory : public ControlNode
 {
 public:
     // Constructor
-    FallbackNodeWithMemory(std::string name);
+    explicit FallbackNodeWithMemory(std::string name);
     FallbackNodeWithMemory(std::string name, int reset_policy);
     ~FallbackNodeWithMemory();
     int DrawType();
@@ -19,9 +19,8 @@ public:
 private:
     unsigned int current_child_idx_;
     unsigned int reset_policy_;
-
 };
-}
+}  // namespace BT
 
 
-#endif // FALLBACK_NODE_WITH_MEMORY_H
+#endif  // FALLBACK_NODE_WITH_MEMORY_H

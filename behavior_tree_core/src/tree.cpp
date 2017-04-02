@@ -1,4 +1,4 @@
-#include "behavior_tree.h"
+#include <behavior_tree.h>
 
 
 int main(int argc, char **argv)
@@ -75,8 +75,7 @@ int main(int argc, char **argv)
 //            root->AddChild(seq);
 //        }
 
-        Execute(sequence1, TickPeriod_milliseconds);//from BehaviorTree.cpp
-
+        Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
 }
     catch (BT::BehaviorTreeException& Exception)
     {

@@ -1,5 +1,5 @@
-#ifndef ROSACTION_H
-#define ROSACTION_H
+#ifndef ACTIONS_ROS_ACTION_H
+#define ACTIONS_ROS_ACTION_H
 
 #include <action_node.h>
 
@@ -16,7 +16,7 @@ protected:
     behavior_tree_core::BTGoal goal;
 public:
     // Constructor
-    ROSAction(std::string name);
+    explicit ROSAction(std::string name);
     ~ROSAction();
 
     // The method that is going to be executed by the thread
@@ -24,9 +24,7 @@ public:
 
     // The method used to interrupt the execution of the node
     void Halt();
-
-
 };
-}
+}  // namespace BT
 
-#endif
+#endif  // ACTIONS_ROS_ACTION_H

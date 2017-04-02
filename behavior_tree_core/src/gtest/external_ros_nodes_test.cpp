@@ -1,4 +1,4 @@
-#include "behavior_tree.h"
+#include <behavior_tree.h>
 
 
 int main(int argc, char **argv)
@@ -14,13 +14,12 @@ int main(int argc, char **argv)
 
 
         BT:: SequenceNode* sequence1 = new BT::SequenceNode("seq1");
-        //SequenceStarNode* sequence1 = new SequenceStarNode("seq1");
+        // SequenceStarNode* sequence1 = new SequenceStarNode("seq1");
 
         sequence1->AddChild(condition);
         sequence1->AddChild(action);
 
-        Execute(sequence1, TickPeriod_milliseconds);//from BehaviorTree.cpp
-
+        Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
 }
     catch (BT::BehaviorTreeException& Exception)
     {
