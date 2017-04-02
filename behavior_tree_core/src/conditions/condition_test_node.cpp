@@ -42,8 +42,8 @@ BT::ReturnStatus BT::ConditionTestNode::Tick()
 
 
 
-	void BT::ConditionTestNode::set_boolean_value(bool boolean_value)
-	{
-		boolean_value_ = boolean_value;
-	}
+  void BT::ConditionTestNode::set_boolean_value(bool boolean_value)
+  {
+    boolean_value_ = boolean_value;
+  }
 

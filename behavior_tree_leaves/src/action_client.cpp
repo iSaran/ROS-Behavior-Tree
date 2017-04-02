@@ -25,18 +25,18 @@ bool isRunning = false;
 
 
 
- 	while(command!=3){
-	ROS_INFO("Send a command: 1:start the action | 2:stop the action | 3:exit the program");
-	std::cin >> command;
+  while(command!=3){
+  ROS_INFO("Send a command: 1:start the action | 2:stop the action | 3:exit the program");
+  std::cin >> command;
 
-		switch(command){
-			case 1: 
+    switch(command){
+      case 1: 
                 if(!isRunning){
                     ROS_INFO("I am running the request");
-	  				ac.sendGoal(goal);
-					// ac.ClientGoalHandle();
+            ac.sendGoal(goal);
+          // ac.ClientGoalHandle();
                     isRunning=true;
-					// ac.waitForResult(ros::Duration(30.0));
+          // ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());
                      ROS_INFO("Action finished, status: %d", node_result.status);
                 }else{
@@ -45,16 +45,16 @@ bool isRunning = false;
                     ac.sendGoal(goal);
                      ROS_INFO("Action finished, status: %d", node_result.status);
                 }
-			break;
-			case 2: 
+      break;
+      case 2: 
                 ROS_INFO("I am cancelling the request");
-				ac.cancelGoal();
-				isRunning=false;
-			break;
-			default:
-			break;
-		}
-	}
+        ac.cancelGoal();
+        isRunning=false;
+      break;
+      default:
+      break;
+    }
+  }
 
 return 0;
 }

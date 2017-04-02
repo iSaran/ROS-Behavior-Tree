@@ -17,7 +17,7 @@ namespace BT
     //    BT::ReturnStatus Tick();
       //  void set_status(ReturnStatus status);
         void set_time(int time);
-	
+  
         // The method used to interrupt the execution of the node
         void Halt();
         void set_boolean_value(bool boolean_value);

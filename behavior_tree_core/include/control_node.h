@@ -31,7 +31,7 @@ namespace BT
 
         // The method used to know the number of children
         unsigned int GetChildrenNumber();
-	std::vector<TreeNode*> GetChildren();
+  std::vector<TreeNode*> GetChildren();
         // The method used to interrupt the execution of the node
         void Halt();
         void ResetColorState();
