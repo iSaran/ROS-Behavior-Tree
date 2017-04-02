@@ -53,7 +53,8 @@ void BT::ControlNode::ResetColorState()
     }
 }
 
-void BT::ControlNode::HaltChildren(int i){
+void BT::ControlNode::HaltChildren(int i)
+{
     for (unsigned int j = i; j < children_nodes_.size(); j++)
     {
         // TODO FIX this

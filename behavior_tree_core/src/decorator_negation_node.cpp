@@ -101,7 +101,8 @@ void BT::DecoratorNegationNode::Exec()
                     WriteState(BT::IDLE);
 
                     std::cout << get_name() << " returning " << BT::SUCCESS << "!" << std::endl;
-                } else
+                }
+                else
                 // 5) if the child state is  running
                 {
                     // 5.1) the node state is equal to running

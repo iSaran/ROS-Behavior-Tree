@@ -36,9 +36,12 @@ public:
   }
   void executeCB(const behavior_tree_core::BTGoalConstPtr &goal)
   {
-    if (/*condition satisfied*/){
+    if (/*condition satisfied*/)
+    {
     setStatus(SUCCESS);
-    }else{
+    }
+    else
+    {
     setStatus(FAILURE);
     }
   }
@@ -46,7 +49,8 @@ public:
 
 
   // returns the status to the client (Behavior Tree)
-    void setStatus(int status){
+    void setStatus(int status)
+    {
         // Set The feedback and result of BT.action
         feedback_.status = status;
         result_.status = feedback_.status;
@@ -55,7 +59,8 @@ public:
         // setSucceeded means that it has finished the action (it has returned SUCCESS or FAILURE).
         as_.setSucceeded(result_);
 
-        switch (status){  // Print for convenience
+        switch (status)
+        {  // Print for convenience
         case SUCCESS:
           ROS_INFO("Condition %s Succeeded", ros::this_node::getName().c_str() );
           break;

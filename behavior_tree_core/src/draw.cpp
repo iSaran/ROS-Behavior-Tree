@@ -269,7 +269,8 @@ void keyboard(unsigned char key, int x, int y)
 }
 
 
-void resize(int width, int height) {
+void resize(int width, int height)
+{
 }
 
 
@@ -387,8 +388,10 @@ void display()
 }
 
 
-void processSpecialKeys(int key, int xx, int yy) {
-    switch (key) {
+void processSpecialKeys(int key, int xx, int yy)
+{
+    switch (key)
+    {
         case GLUT_KEY_UP :
             y +=  fraction;
             break;
@@ -430,7 +433,8 @@ void processSpecialKeys(int key, int xx, int yy) {
         {
             glScalef(1.0f  +zoom_fraction , 1.0f  +zoom_fraction, 1.0f);
             zoom +=zoom_fraction;
-        }else
+        }
+        else
         {
             glScalef(1.0f, 1.0f, 1.0f);
         }
@@ -457,7 +461,9 @@ void mouse(int button, int state, int x, int y)
        if (state == GLUT_UP) return;  // Disregard redundant GLUT_UP events
      //  printf("Scroll %s At %d %d\n", (button == 3) ? "Up" : "Down", x, y);
        exit(9);
-   }else{  // normal button event
+   }
+   else
+   {  // normal button event
       // printf("Button %s At %d %d\n", (state == GLUT_DOWN) ? "Down" : "Up", x, y);
    }
 }

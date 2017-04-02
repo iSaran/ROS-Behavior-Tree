@@ -30,7 +30,8 @@ void BT::ROSAction::WaitForTick()
           do
           {
               node_result = *(action_client_.getResult());  // checking the result
-          } while (node_result.status == BT::RUNNING && get_status() != BT::HALTED);
+          }
+          while (node_result.status == BT::RUNNING && get_status() != BT::HALTED);
 
           if (get_status() == BT::HALTED)
           {
@@ -38,7 +39,8 @@ void BT::ROSAction::WaitForTick()
               ROS_INFO("I am Halting the client");
               action_client_.cancelGoal();
           }
-          else{
+          else
+          {
               ROS_INFO("The Server Has Replied");
               // Set this node status according to what the external node replied
               set_status((ReturnStatus)node_result.status);

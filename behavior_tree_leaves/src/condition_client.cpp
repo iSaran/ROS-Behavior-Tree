@@ -25,13 +25,16 @@ bool isRunning = false;
 
 
 
-  while (command != 3){
+  while (command != 3)
+  {
     ROS_INFO("Send a command: 1:Evaluate the condition | 3:exit the program");
   std::cin >> command;
 
-    switch (command){
+    switch (command)
+    {
       case 1: 
-                if (!isRunning){
+                if (!isRunning)
+                {
                     ROS_INFO("I am running the request");
             ac.sendGoal(goal);
           // ac.ClientGoalHandle();
@@ -39,7 +42,9 @@ bool isRunning = false;
                     ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());
                      ROS_INFO("Condition evaluated, status: %d", node_result.status);
-                }else{
+                }
+                else
+                {
                     ROS_INFO("I am re-running the request");
                     ac.cancelGoal();
                     ac.sendGoal(goal);
