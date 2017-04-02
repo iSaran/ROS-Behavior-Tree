@@ -15,6 +15,6 @@ public:
     explicit BehaviorTreeException(const std::string Message);
     const char* what();
 };
-}
+}  // namespace BT
 
 #endif  // EXCEPTIONS_H

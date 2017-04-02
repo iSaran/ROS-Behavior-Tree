@@ -24,5 +24,5 @@ private:
     unsigned int success_childred_num_;
     unsigned int failure_childred_num_;
 };
-}
+}  // namespace BT
 #endif  // PARALLEL_NODE_H

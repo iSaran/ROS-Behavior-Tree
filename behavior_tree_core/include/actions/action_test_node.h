@@ -27,6 +27,6 @@ private:
 
     // ReturnStatus status_;
 };
-}
+}  // namespace BT
 
 #endif  // ACTIONS_ACTION_TEST_NODE_H

@@ -15,6 +15,6 @@ public:
     // The method that is going to be executed by the thread
     void Exec();
 };
-}
+}  // namespace BT
 
 #endif  // SELECTOR_STAR_NODE_H

@@ -18,6 +18,6 @@ private:
   unsigned int NTries_;
   unsigned int TryIndx_;
 };
-}
+}  // namespace BT
 
 #endif  // DECORATOR_RETRY_NODE_H

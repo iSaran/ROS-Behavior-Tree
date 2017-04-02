@@ -479,7 +479,7 @@ void drawTree(BT::ControlNode* tree_)
 {
     // ***************************BT VISUALIZATION****************************
     int argc = 1;
-    char *argv[1] = {(char*)"Something"};
+    char *argv[1] = {const_cast<char*>("Something")};
 
     if (!init)
     {

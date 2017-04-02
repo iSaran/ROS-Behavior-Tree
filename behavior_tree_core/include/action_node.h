@@ -25,6 +25,6 @@ public:
     bool WriteState(ReturnStatus new_state);
 int DrawType();
 };
-}
+}  // namespace BT
 
 #endif  // ACTION_NODE_H

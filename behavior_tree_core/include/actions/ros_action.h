@@ -25,6 +25,6 @@ public:
     // The method used to interrupt the execution of the node
     void Halt();
 };
-}
+}  // namespace BT
 
 #endif  // ACTIONS_ROS_ACTION_H

@@ -20,7 +20,7 @@ private:
     unsigned int current_child_idx_;
     unsigned int reset_policy_;
 };
-}
+}  // namespace BT
 
 
 #endif  // FALLBACK_NODE_WITH_MEMORY_H

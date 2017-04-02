@@ -23,6 +23,6 @@ public:
     bool WriteState(ReturnStatus new_state);
 int DrawType();
 };
-}
+}  // namespace BT
 
 #endif  // CONDITION_NODE_H

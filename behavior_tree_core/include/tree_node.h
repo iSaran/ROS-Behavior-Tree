@@ -166,6 +166,6 @@ public:
 
     NodeType get_type();
 };
-}
+}  // namespace BT
 
 #endif  // TREE_NODE_H

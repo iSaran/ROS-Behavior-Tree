@@ -15,6 +15,6 @@ public:
     // The method that is going to be executed by the thread
     BT::ReturnStatus Tick();
 };
-}
+}  // namespace BT
 
 #endif  // FALLBACK_NODE_H

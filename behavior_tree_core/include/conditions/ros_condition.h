@@ -21,6 +21,6 @@ public:
     // The method that is going to be executed by the thread
     ReturnStatus Tick();
 };
-}
+}  // namespace BT
 
 #endif  // CONDITIONS_ROS_CONDITION_H

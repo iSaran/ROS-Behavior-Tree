@@ -18,6 +18,6 @@ public:
 private:
     bool boolean_value_;
 };
-}
+}  // namespace BT
 
 #endif  // CONDITIONS_CONDITION_TEST_NODE_H

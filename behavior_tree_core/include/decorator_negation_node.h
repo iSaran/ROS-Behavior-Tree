@@ -16,6 +16,6 @@ int DrawType();
     void Exec();
     void AddChild(TreeNode* child);
 };
-}
+}  // namespace BT
 
 #endif  // DECORATOR_NEGATION_NODE_H

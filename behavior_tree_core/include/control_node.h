@@ -42,6 +42,6 @@ public:
     // conditional waiting (only mutual access)
     bool WriteState(ReturnStatus new_state);
 };
-}
+}  // namespace BT
 
 #endif  // CONTROL_NODE_H

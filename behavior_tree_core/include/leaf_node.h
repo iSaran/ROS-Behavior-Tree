@@ -16,6 +16,6 @@ public:
 void ResetColorState();
 int Depth();
 };
-}
+}  // namespace BT
 
 #endif  // LEAF_NODE_H
