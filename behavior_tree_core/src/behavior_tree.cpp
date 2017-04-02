@@ -10,16 +10,16 @@ void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)
 
     root->ResetColorState();
 
-    while(true)
+    while (true)
     {
-           DEBUG_STDOUT( "Ticking the root node !");
+           DEBUG_STDOUT("Ticking the root node !");
 
         // Ticking the root node
         root->Tick();
         // Printing its state
        //  root->GetNodeState();
 
-        if(root->get_status() != BT::RUNNING  )
+        if (root->get_status() != BT::RUNNING  )
         {
             // when the root returns a status it resets the colors of the tree
             root->ResetColorState();

@@ -35,7 +35,7 @@ void drawEllipse(float xpos, float ypos, float xradius, float yradius)
 {
     glBegin(GL_LINE_LOOP);
 
-    for(int i = 0; i < 359; i++)
+    for (int i = 0; i < 359; i++)
     {
          // convert degrees into radians
         float degInRad = i*DEG2RAD;
@@ -44,7 +44,7 @@ void drawEllipse(float xpos, float ypos, float xradius, float yradius)
     glEnd();
 }
 
-void drawString (void * font, char *string, float x, float y, float z)
+void drawString(void * font, char *string, float x, float y, float z)
 {
     renderBitmapString(x, y, font, string);
 }
@@ -67,7 +67,7 @@ int compute_node_lines(const char *string)
     int new_line_num = 1;
     glRasterPos2f(x, y);
     for (c=string; *c != '\0'; c++) {
-        if((*c == '\n') || ((*c == ' ' && i > 6) || i > 9))
+        if ((*c == '\n') || ((*c == ' ' && i > 6) || i > 9))
         {
             new_line_num++;
             i = 0;
@@ -88,9 +88,9 @@ int compute_max_width(const char *string)
 
     glRasterPos2f(x, y);
     for (current_char = string; *current_char != '\0'; current_char++) {
-        if((*current_char == '\n') || ((*current_char == ' ' && current_line_width > 6) || current_line_width > 9))
+        if ((*current_char == '\n') || ((*current_char == ' ' && current_line_width > 6) || current_line_width > 9))
         {
-            if(current_line_width > max_width)
+            if (current_line_width > max_width)
             {
                 max_width = current_line_width;
             }
@@ -118,7 +118,7 @@ void renderBitmapString(float x, float y, void *font, const char *string)
     int new_line_num = 0;
     glRasterPos2f(x, y);
     for (c=string; *c != '\0'; c++) {
-        if((*c == '\n') || ((*c == ' ' && i > 6) || i > 9))
+        if ((*c == '\n') || ((*c == ' ' && i > 6) || i > 9))
         {
             new_line_num++;
             glRasterPos2f(x, y - 0.025*(new_line_num));
@@ -142,7 +142,7 @@ void draw_node(float x, float y, int node_type, const char *leafName, int status
         drawString(font, "?*", (x + NODE_WIDTH/2 -0.005), (y - NODE_HEIGHT/2), 0);
         break;
     case BT::SEQUENCESTAR:
-        drawString(font, ">*", (x + NODE_WIDTH/2 -0.0051 ), (y - NODE_HEIGHT/2), 0);
+        drawString(font, ">*", (x + NODE_WIDTH/2 -0.0051), (y - NODE_HEIGHT/2), 0);
         break;
     case BT::SELECTOR:
         drawString(font, "?", (x + NODE_WIDTH/2 -0.005), (y - NODE_HEIGHT/2), 0);
@@ -318,7 +318,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
 
         for (int i = 0; i < M; i++)
         {
-            if(children[i]->DrawType() != BT::ACTION && children[i]->DrawType() != BT::CONDITION)
+            if (children[i]->DrawType() != BT::ACTION && children[i]->DrawType() != BT::CONDITION)
             {
                 current_x_end = 0.04;
                 children_x_middle_relative.push_back(0.02);
@@ -348,9 +348,9 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
 
         for (int i = 0; i < M; i++)
         {
-            if(i > 0)
+            if (i > 0)
             {
-                updateTree(children[i], x_shift + children_x_end.at(i-1) , y_pos - y_offset  , y_offset );
+                updateTree(children[i], x_shift + children_x_end.at(i-1) , y_pos - y_offset  , y_offset);
 
                 draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_end.at(i-1) + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
 
@@ -360,7 +360,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
             {
                 draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
 
-                updateTree(children[i], x_shift , y_pos - y_offset  , y_offset );
+                updateTree(children[i], x_shift , y_pos - y_offset  , y_offset);
             }
         }
         // exit(0);
@@ -374,7 +374,7 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
 
 void display()
 {
-    glClearColor( r_color, g_color, b_color, 0.1);
+    glClearColor(r_color, g_color, b_color, 0.1);
 
     // clear the draw buffer .
     glClear(GL_COLOR_BUFFER_BIT);   // Erase everything
@@ -428,15 +428,15 @@ void processSpecialKeys(int key, int xx, int yy) {
         case GLUT_KEY_HOME:
         if (zoom < 1.0f)
         {
-            glScalef( 1.0f  +zoom_fraction , 1.0f  +zoom_fraction, 1.0f );
+            glScalef(1.0f  +zoom_fraction , 1.0f  +zoom_fraction, 1.0f);
             zoom +=zoom_fraction;
         }else
         {
-            glScalef( 1.0f, 1.0f, 1.0f );
+            glScalef(1.0f, 1.0f, 1.0f);
         }
             break;
         case GLUT_KEY_END:
-        glScalef( 1.0f  - zoom_fraction, 1.0f  - zoom_fraction, 1.0f );
+        glScalef(1.0f  - zoom_fraction, 1.0f  - zoom_fraction, 1.0f);
         zoom -= zoom_fraction;
 
         break;
@@ -489,7 +489,7 @@ void drawTree(BT::ControlNode* tree_)
 
 
 
-    glClearColor( 0, 0.71, 0.00, 0.1);
+    glClearColor(0, 0.71, 0.00, 0.1);
     glutDisplayFunc(display);   // Register display callback
 
 

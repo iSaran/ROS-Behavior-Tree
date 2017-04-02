@@ -20,12 +20,12 @@ void BT::DecoratorNegationNode::Exec()
     // Simulating a tick for myself
     tick_engine.tick();
 
-    while(true)
+    while (true)
     {
         // Waiting for a tick to come
         tick_engine.wait();
 
-        if(ReadState() == BT::EXIT)
+        if (ReadState() == BT::EXIT)
         {
             // The behavior tree is going to be destroied
             return;
@@ -82,7 +82,7 @@ void BT::DecoratorNegationNode::Exec()
                 }
 
                 // 3) if the child state is a success:
-                if(children_states_[0] == BT::SUCCESS)
+                if (children_states_[0] == BT::SUCCESS)
                 {
                     // 3.1) the node state is equal to failure since I am negating the status
                     SetNodeState(BT::FAILURE);
@@ -92,7 +92,7 @@ void BT::DecoratorNegationNode::Exec()
 
                     std::cout << get_name() << " returning " << BT::FAILURE << "!" << std::endl;
                 }
-                else if(children_states_[0] == BT::FAILURE)
+                else if (children_states_[0] == BT::FAILURE)
                 {
                     // 4.1) the node state is equal to success since I am negating the status
                     SetNodeState(BT::SUCCESS);

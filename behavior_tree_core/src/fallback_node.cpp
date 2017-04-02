@@ -39,7 +39,7 @@ BT::ReturnStatus BT::FallbackNode::Tick()
                         child_i_status_ = children_nodes_[i]->get_status();
                         std::this_thread::sleep_for(std::chrono::milliseconds(10));
                     }
-                    while(child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
+                    while (child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
                 }
             }
             else
@@ -49,9 +49,9 @@ BT::ReturnStatus BT::FallbackNode::Tick()
                 child_i_status_ = children_nodes_[i]->Tick();
             }
             // Ponderate on which status to send to the parent
-            if(child_i_status_ != BT::FAILURE)
+            if (child_i_status_ != BT::FAILURE)
             {
-                if(child_i_status_ == BT::SUCCESS)
+                if (child_i_status_ == BT::SUCCESS)
                 {
                     children_nodes_[i]->set_status(BT::IDLE);  // the child goes in idle if it has returned success.
                 }
@@ -67,7 +67,7 @@ BT::ReturnStatus BT::FallbackNode::Tick()
             {  // the child returned failure.
                 children_nodes_[i]->set_status(BT::IDLE);
 
-                if(i == N_of_children_ - 1)
+                if (i == N_of_children_ - 1)
                 {  // If the  child status is failure, and it is the last child to be ticked, then the sequence has failed.
                     set_status(BT::FAILURE);
                     return BT::FAILURE;

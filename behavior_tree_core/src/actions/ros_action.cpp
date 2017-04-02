@@ -17,7 +17,7 @@ BT::ROSAction::~ROSAction() {}
 void BT::ROSAction::WaitForTick()
 {
       node_result.status = BT::RUNNING;
-      while(true)
+      while (true)
       {
           // Waiting for a tick to come
           tick_engine.Wait();
@@ -30,9 +30,9 @@ void BT::ROSAction::WaitForTick()
           do
           {
               node_result = *(action_client_.getResult());  // checking the result
-          } while(node_result.status == BT::RUNNING && get_status() != BT::HALTED);
+          } while (node_result.status == BT::RUNNING && get_status() != BT::HALTED);
 
-          if(get_status() == BT::HALTED)
+          if (get_status() == BT::HALTED)
           {
               ROS_INFO("The Node is Halted");
               ROS_INFO("I am Halting the client");

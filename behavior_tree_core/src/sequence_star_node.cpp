@@ -23,13 +23,13 @@ void BT::SequenceStarNode::Exec()
     tick_engine.tick();
     i = 0;  // I initialize the index of the child to tick
 
-    while(true)
+    while (true)
     {
         // Waiting for a tick to come
         tick_engine.wait();
 
 
-        if(ReadState() == BT::EXIT)
+        if (ReadState() == BT::EXIT)
         {
             i = 0;
             // The behavior tree is going to be destroied
@@ -87,7 +87,7 @@ void BT::SequenceStarNode::Exec()
                 }
 
                 // 3) if the child state is not a success:
-                if(children_states_[i] != BT::SUCCESS)
+                if (children_states_[i] != BT::SUCCESS)
                 {
                     // 3.1) the node state is equal to it;
                     SetNodeState(children_states_[i]);

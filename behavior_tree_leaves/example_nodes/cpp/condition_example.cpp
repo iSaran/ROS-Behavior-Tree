@@ -36,7 +36,7 @@ public:
   }
   void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
   {
-    if(true){
+    if (true){
     set_status(SUCCESS);
     }else{
     set_status(FAILURE);
@@ -55,7 +55,7 @@ public:
         // setSucceeded means that it has finished the action (it has returned SUCCESS or FAILURE).
         as_.setSucceeded(result_);
 
-        switch(status){  // Print for convenience
+        switch (status){  // Print for convenience
         case SUCCESS:
           ROS_INFO("Condition %s Succeeded", ros::this_node::getName().c_str() );
           break;

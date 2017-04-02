@@ -23,12 +23,12 @@ void BT::SelectorStarNode::Exec()
     tick_engine.tick();
     i = 0;  // Initialize the index of the child to tick
 
-    while(true)
+    while (true)
     {
         // Waiting for a tick to come
         tick_engine.wait();
 
-        if(ReadState() == BT::EXIT)
+        if (ReadState() == BT::EXIT)
         {
             // The behavior tree is going to be destroied
             return;
@@ -41,7 +41,7 @@ void BT::SelectorStarNode::Exec()
             std::cout << get_name() << " ticked, ticking children..." << std::endl;
 
             // For each child:
-            while(i < N_of_children_)
+            while (i < N_of_children_)
             {
                 if (children_nodes_[i]->get_type() == BT::ACTION_NODE)
                 {
@@ -85,7 +85,7 @@ void BT::SelectorStarNode::Exec()
                 }
 
                 // 3) if the child state is not a success:
-                if(children_states_[i] != BT::FAILURE)
+                if (children_states_[i] != BT::FAILURE)
                 {
                     // 3.1) the node state is equal to it;
                     SetNodeState(children_states_[i]);
@@ -102,7 +102,7 @@ void BT::SelectorStarNode::Exec()
 
                     // 3.4) the while loop must end here.
                     break;
-                } else if(children_states_[i] == BT::FAILURE)  // if child i has failed the selector star node can tick the next child
+                } else if (children_states_[i] == BT::FAILURE)  // if child i has failed the selector star node can tick the next child
                 {
                     i++;
                 }

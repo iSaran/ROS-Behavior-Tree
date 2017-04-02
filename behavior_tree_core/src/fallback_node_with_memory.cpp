@@ -57,7 +57,7 @@ BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()
                     child_i_status_ = children_nodes_[current_child_idx_]->get_status();
                     std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 }
-                while(child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
+                while (child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
             }
         }
         else
@@ -68,31 +68,31 @@ BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()
         }
 
 
-        if(child_i_status_ == BT::SUCCESS ||child_i_status_ == BT::FAILURE )
+        if (child_i_status_ == BT::SUCCESS ||child_i_status_ == BT::FAILURE )
         {
             children_nodes_[current_child_idx_]->set_status(BT::IDLE);  // the child goes in idle if it has returned success or failure.
         }
 
 
-        if(child_i_status_ != BT::FAILURE)
+        if (child_i_status_ != BT::FAILURE)
         {
             // -  If the  child status is not success, return the status
             DEBUG_STDOUT("the status of: " << get_name() << " becomes " << child_i_status_);
-            if(child_i_status_ == BT::SUCCESS && (reset_policy_ == BT::ON_SUCCESS|| reset_policy_ == BT::ON_SUCCESS_OR_FAILURE))
+            if (child_i_status_ == BT::SUCCESS && (reset_policy_ == BT::ON_SUCCESS|| reset_policy_ == BT::ON_SUCCESS_OR_FAILURE))
             {
                 current_child_idx_ = 0;
             }
             set_status(child_i_status_);
             return child_i_status_;
         }
-        else if(current_child_idx_ != N_of_children_ - 1)
+        else if (current_child_idx_ != N_of_children_ - 1)
         {
             // If the  child status is failure, continue to the next child (if any, hence if(current_child_ != N_of_children_ - 1) ) in the for loop (if any).
             current_child_idx_++;
         }else
         {
             // if it the last child.
-            if(child_i_status_ == BT::FAILURE)
+            if (child_i_status_ == BT::FAILURE)
             {
                 // if it the last child and it has returned failure, reset the memory
                 current_child_idx_ = 0;

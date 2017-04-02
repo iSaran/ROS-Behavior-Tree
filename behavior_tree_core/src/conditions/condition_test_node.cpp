@@ -16,7 +16,7 @@ BT::ReturnStatus BT::ConditionTestNode::Tick()
         // Waiting for a tick to come
      //   tick_engine.wait();
 
-        if(get_status() == BT::EXIT)
+        if (get_status() == BT::EXIT)
         {
             // The behavior tree is going to be destroied
             return BT::EXIT;

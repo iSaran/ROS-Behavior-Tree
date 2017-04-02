@@ -17,7 +17,7 @@ BT::ActionTestNode::~ActionTestNode() {}
 
 void BT::ActionTestNode::WaitForTick()
 {
-    while(true)
+    while (true)
     {
         // Waiting for the first tick to come
         DEBUG_STDOUT(get_name() << " WAIT FOR TICK");
@@ -30,14 +30,14 @@ void BT::ActionTestNode::WaitForTick()
         set_status(BT::RUNNING);
         // Perform action...
         int i = 0;
-        while(get_status() != BT::HALTED && i++ < time_)
+        while (get_status() != BT::HALTED && i++ < time_)
         {
             DEBUG_STDOUT(" Action " << get_name() << "running! Thread id:" << std::this_thread::get_id());
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
-        if(get_status() != BT::HALTED)
+        if (get_status() != BT::HALTED)
         {
-            if(boolean_value_)
+            if (boolean_value_)
             {
                 set_status(BT::SUCCESS);
                 DEBUG_STDOUT(" Action " << get_name() << " Done!");

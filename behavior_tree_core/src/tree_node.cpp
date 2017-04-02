@@ -12,7 +12,7 @@ BT::TreeNode::~TreeNode() {}
 
 void BT::TreeNode::set_status(ReturnStatus new_status)
 {
-    if(new_status != BT::IDLE)
+    if (new_status != BT::IDLE)
     {
         set_color_status(new_status);
     }

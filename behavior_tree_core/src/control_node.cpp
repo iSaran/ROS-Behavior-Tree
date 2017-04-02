@@ -47,14 +47,14 @@ std::vector<BT::TreeNode*> BT::ControlNode::GetChildren()
 void BT::ControlNode::ResetColorState()
 {
     set_color_status(BT::IDLE);
-    for(unsigned int i = 0; i < children_nodes_.size(); i++)
+    for (unsigned int i = 0; i < children_nodes_.size(); i++)
     {
         children_nodes_[i]->ResetColorState();
     }
 }
 
 void BT::ControlNode::HaltChildren(int i){
-    for(unsigned int j = i; j < children_nodes_.size(); j++)
+    for (unsigned int j = i; j < children_nodes_.size(); j++)
     {
         // TODO FIX this
         //        if (children_nodes_[j]->get_type() != BT::CONDITION_NODE  && children_nodes_[j]->get_status() != BT::IDLE)

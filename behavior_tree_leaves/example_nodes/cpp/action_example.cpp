@@ -39,7 +39,7 @@ public:
 
     // start executing the action
     int i = 0;
-    while(i < 5)
+    while (i < 5)
     {
       // check that preempt has not been requested by the client
       if (as_.isPreemptRequested())
@@ -75,7 +75,7 @@ public:
       // setSucceeded means that it has finished the action (it has returned SUCCESS or FAILURE).
       as_.setSucceeded(result_);
 
-      switch(status){  // Print for convenience
+      switch (status){  // Print for convenience
       case SUCCESS:
         ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
         break;

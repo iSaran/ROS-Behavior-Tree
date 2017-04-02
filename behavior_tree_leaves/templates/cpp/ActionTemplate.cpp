@@ -38,7 +38,7 @@ public:
     ROS_INFO("Starting Action");
 
     // start executing the action
-    while(/*YOUR LOOP CONDITION (IF ANY)*/)
+    while (/*YOUR LOOP CONDITION (IF ANY)*/)
     {
       // check that preempt has not been requested by the client
       if (as_.isPreemptRequested() || !ros::ok())
@@ -80,7 +80,7 @@ public:
       // setSucceeded means that it has finished the action (it has returned SUCCESS or FAILURE).
       as_.setSucceeded(result_);
 
-      switch(status){  // Print for convenience
+      switch (status){  // Print for convenience
       case SUCCESS:
         ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
         break;

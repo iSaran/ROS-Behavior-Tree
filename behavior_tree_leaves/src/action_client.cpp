@@ -4,7 +4,7 @@
 #include <behavior_tree_core/BTAction.h>
 
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
   ros::init(argc, argv, "test_action");
 
@@ -25,13 +25,13 @@ bool isRunning = false;
 
 
 
-  while(command != 3){
+  while (command != 3){
   ROS_INFO("Send a command: 1:start the action | 2:stop the action | 3:exit the program");
   std::cin >> command;
 
-    switch(command){
+    switch (command){
       case 1: 
-                if(!isRunning){
+                if (!isRunning){
                     ROS_INFO("I am running the request");
             ac.sendGoal(goal);
           // ac.ClientGoalHandle();
