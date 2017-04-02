@@ -135,7 +135,7 @@ public:
 
     // The method that retrive the state of the node
     // (conditional waiting and mutual access)
-   // ReturnStatus GetNodeState();
+    // ReturnStatus GetNodeState();
     void SetNodeState(ReturnStatus new_state);
     void set_color_status(ReturnStatus new_color_status);
 

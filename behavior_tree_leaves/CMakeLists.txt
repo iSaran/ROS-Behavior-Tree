@@ -204,7 +204,7 @@ add_dependencies(
 
 ## Run roslint with `catkin_make roslint`
 # Filter out errors with respect C++11 (for ROS-indigo)
-set(ROSLINT_CPP_OPTS "--filter=-build/c++11")
+set(ROSLINT_CPP_OPTS "--filter=-build/c++11,-build/include_what_you_use,-legal/copyright")
 # Roslint macro
 roslint_cpp()
 
