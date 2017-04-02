@@ -18,7 +18,7 @@ namespace BT
 
         // Vector size
         unsigned int N_of_children_;
-        //child i status. Used to rout the ticks
+        // child i status. Used to rout the ticks
         ReturnStatus child_i_status_;
 
     public:

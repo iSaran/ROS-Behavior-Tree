@@ -24,4 +24,4 @@ private:
 }
 
 
-#endif // FALLBACK_NODE_WITH_MEMORY_H
+#endif  // FALLBACK_NODE_WITH_MEMORY_H

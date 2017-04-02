@@ -1,10 +1,10 @@
 #include <ros/ros.h>
-#include <actionlib/server/simple_action_server.h>// needed for actionlib
+#include <actionlib/server/simple_action_server.h>  // needed for actionlib
 #include <behavior_tree_core/BTAction.h>
 
 
 
-enum Status {RUNNING, SUCCESS, FAILURE};//BT return status
+enum Status {RUNNING, SUCCESS, FAILURE};  // BT return status
 
 
 class BTAction
@@ -16,8 +16,8 @@ protected:
   actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;
   std::string action_name_;
   // create messages that are used to published feedback/result
-  behavior_tree_core::BTFeedback feedback_; //action feedback (SUCCESS, FAILURE)
-  behavior_tree_core::BTResult result_;//action feedback  (same as feedback for us)
+  behavior_tree_core::BTFeedback feedback_;  // action feedback (SUCCESS, FAILURE)
+  behavior_tree_core::BTResult result_;  // action feedback  (same as feedback for us)
 
 
 public:
@@ -27,7 +27,7 @@ public:
     as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
     action_name_(name)
   {
-   //Starts the action server
+   // Starts the action server
     as_.start();
 
 
@@ -62,7 +62,7 @@ public:
 
       ROS_INFO("Executing Action");
 
-      ros::Duration(0.5).sleep();//waiting for 0.5 seconds
+      ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
       i++;
 
    }
@@ -75,9 +75,9 @@ public:
   }
 
 
-//returns the status to the client (Behavior Tree)
+// returns the status to the client (Behavior Tree)
   void set_status(int status){
-      //Set The feedback and result of BT.action
+      // Set The feedback and result of BT.action
       feedback_.status = status;
       result_.status = feedback_.status;
       // publish the feedback
@@ -85,7 +85,7 @@ public:
       // setSucceeded means that it has finished the action (it has returned SUCCESS or FAILURE).
       as_.setSucceeded(result_);
 
-      switch(status){//Print for convenience
+      switch(status){  // Print for convenience
       case SUCCESS:
         ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
         break;

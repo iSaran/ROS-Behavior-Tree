@@ -42,7 +42,7 @@ void BT::DecoratorRetryNode::Exec()
 
             TryIndx_ = 0;
             // For each child:
-            //for (i = 0; i<M; i++)
+            // for (i = 0; i<M; i++)
             {
                 if (children_nodes_[0]->get_type() == BT::ACTION_NODE)
                 {

@@ -27,4 +27,4 @@ private:
 };
 }
 
-#endif // SEQUENCE_NODE_WITH_MEMORY_H
+#endif  // SEQUENCE_NODE_WITH_MEMORY_H

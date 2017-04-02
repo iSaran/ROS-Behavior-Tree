@@ -12,7 +12,7 @@ BT::ActionTestNode::ActionTestNode(std::string name) : ActionNode::ActionNode(na
 
 BT::ActionTestNode::~ActionTestNode() {}
 
-//BT::ReturnStatus BT::ActionTestNode::Tick(){ return BT::EXIT;}
+// BT::ReturnStatus BT::ActionTestNode::Tick(){ return BT::EXIT;}
 
 
 void BT::ActionTestNode::WaitForTick()
@@ -66,9 +66,9 @@ void BT::ActionTestNode::Halt()
 }
 
 
-//void BT::ActionTestNode::set_status(ReturnStatus status){
-//    status_ = status;
-//}
+// void BT::ActionTestNode::set_status(ReturnStatus status){
+//     status_ = status;
+// }
 
 void BT::ActionTestNode::set_time(int time){
     time_ = time;

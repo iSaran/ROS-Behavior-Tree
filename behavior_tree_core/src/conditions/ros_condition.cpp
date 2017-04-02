@@ -7,7 +7,7 @@ enum Status {RUNNING, SUCCESS, FAILURE};
 BT::ROSCondition::ROSCondition(std::string name) : action_client_(name, true), ConditionNode::ConditionNode(name)
 {
     ROS_INFO("Waiting For the Acutator named %s to start", get_name().c_str());
-    action_client_.waitForServer(); //will wait for infinite time until the server starts
+    action_client_.waitForServer();  // will wait for infinite time until the server starts
     ROS_INFO("Actuator %s Started", get_name().c_str());
 }
 

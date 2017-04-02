@@ -27,7 +27,7 @@ namespace BT
         int time_;
         bool boolean_value_;
 
-        ///ReturnStatus status_;
+        // ReturnStatus status_;
 
     };
 }

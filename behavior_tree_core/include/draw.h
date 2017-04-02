@@ -8,7 +8,7 @@
 #include<string>
 #include <control_node.h>
 
-//enum status {RUNNING,SUCCESS,FAILURE,IDLE, HALTED };
+// enum status {RUNNING,SUCCESS,FAILURE,IDLE, HALTED };
 
 void drawEllipse(float xradius, float yradius);
 
@@ -34,6 +34,6 @@ int compute_node_lines(const char *string);
 
 int compute_max_width(const char *string);
 
-//void display();
+// void display();
 
-#endif // DRAWTREE_H
+#endif  // DRAWTREE_H

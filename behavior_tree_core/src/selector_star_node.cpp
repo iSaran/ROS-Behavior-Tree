@@ -21,7 +21,7 @@ void BT::SelectorStarNode::Exec()
 
     // Simulating a tick for myself
     tick_engine.tick();
-    i = 0; //Initialize the index of the child to tick
+    i = 0;  // Initialize the index of the child to tick
 
     while(true)
     {
@@ -96,7 +96,7 @@ void BT::SelectorStarNode::Exec()
                     WriteState(BT::IDLE);
                     if (children_states_[i] == BT::SUCCESS)
                     {
-                     i = 0; // Final state_ of rhe selector node. child index reinitialized
+                     i = 0;  // Final state_ of rhe selector node. child index reinitialized
                      }
 
 
@@ -104,7 +104,7 @@ void BT::SelectorStarNode::Exec()
 
                     // 3.4) the while loop must end here.
                     break;
-                } else if(children_states_[i] == BT::FAILURE)//if child i has failed the selector star node can tick the next child
+                } else if(children_states_[i] == BT::FAILURE)  // if child i has failed the selector star node can tick the next child
                 {
                     i ++;
                 }

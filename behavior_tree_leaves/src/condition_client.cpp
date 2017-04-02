@@ -14,10 +14,10 @@ int main (int argc, char **argv)
     behavior_tree_core::BTResult node_result;
   ROS_INFO("Waiting for action server to start.");
   // wait for the action server to start
-  ac.waitForServer(); //will wait for infinite time
+  ac.waitForServer();  // will wait for infinite time
 
   behavior_tree_core::BTGoal goal;
-  //goal.order = 20;
+  // goal.order = 20;
 
 
 int command=0;
@@ -35,7 +35,7 @@ bool isRunning = false;
                 if(!isRunning){
                     ROS_INFO("I am running the request");
 	  				ac.sendGoal(goal);
-					//ac.ClientGoalHandle();
+					// ac.ClientGoalHandle();
                     isRunning=true;
                     ac.waitForResult(ros::Duration(30.0));
                     node_result = *(ac.getResult());

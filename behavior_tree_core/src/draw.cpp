@@ -37,7 +37,7 @@ void drawEllipse(float xpos, float ypos, float xradius, float yradius)
 
     for(int i=0; i < 359; i++)
     {
-         //convert degrees into radians
+         // convert degrees into radians
         float degInRad = i*DEG2RAD;
         glVertex2d(xpos+cos(degInRad)*xradius,  ypos + sin(degInRad)*yradius);
 
@@ -51,7 +51,7 @@ void drawString (void * font, char *string, float x, float y, float z)
     renderBitmapString(x, y, font, string);
 }
 
-//void drawString (void * font, char *s, float x, float y, float z)
+// void drawString (void * font, char *s, float x, float y, float z)
 //{
 //     unsigned int i;
 //     glRasterPos3f(x, y, z);
@@ -104,13 +104,13 @@ int compute_max_width(const char *string)
         }
         else
         {
-            //max_width++;
+            // max_width++;
 
         }
         current_line_width++;
     }
 
-    if (max_width == 0)//if the lable fits in a single line
+    if (max_width == 0)  // if the lable fits in a single line
     {
        max_width = current_line_width;
     }
@@ -307,21 +307,21 @@ void drawCircle(float radius)
 void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offset )
 {
 
-    //x_offset*pow(2,tree->Depth()-1)
+    // x_offset*pow(2,tree->Depth()-1)
    // GLfloat x_space = 0.01;
 
     BT::ControlNode* d = dynamic_cast<BT::ControlNode*> (tree);
     if (d == NULL)
-    {//if it is a leaf node, draw it
+    {  // if it is a leaf node, draw it
 
 
         draw_node(x_pos , (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(), tree->get_color_status());
 
     }
     else
-    {//if it is a control flow node, draw it and its children
+    {  // if it is a control flow node, draw it and its children
 
-        //setpositions(tree, x_pos , y_pos, x_offset , 0.1 );
+        // setpositions(tree, x_pos , y_pos, x_offset , 0.1 );
         draw_node((GLfloat) x_pos, (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(), tree->get_color_status());
 
 
@@ -388,10 +388,10 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
                 updateTree(children[i], x_shift , y_pos - y_offset  , y_offset );
             }
         }
-        //exit(0);
+        // exit(0);
 
 
-        //return x_shift_new + (x_min+x_max)/2;
+        // return x_shift_new + (x_min+x_max)/2;
 
     }
 }
@@ -487,10 +487,10 @@ void processSpecialKeys(int key, int xx, int yy) {
 void mouse(int button, int state, int x, int y)
 {
    // Wheel reports as button 3(scroll up) and button 4(scroll down)
-   if ((button == 1) || (button == 2)) // It's a wheel event
+   if ((button == 1) || (button == 2))  // It's a wheel event
    {
        // Each wheel event reports like a button click, GLUT_DOWN then GLUT_UP
-       if (state == GLUT_UP) return; // Disregard redundant GLUT_UP events
+       if (state == GLUT_UP) return;  // Disregard redundant GLUT_UP events
      //  printf("Scroll %s At %d %d\n", (button == 3) ? "Up" : "Down", x, y);
        exit(9);
    }else{  // normal button event
@@ -501,7 +501,7 @@ void mouse(int button, int state, int x, int y)
 
 void drawTree(BT::ControlNode* tree_)
 {
-    //***************************BT VISUALIZATION****************************
+    // ***************************BT VISUALIZATION****************************
     int argc = 1;
     char *argv[1] = {(char*)"Something"};
 
@@ -510,7 +510,7 @@ void drawTree(BT::ControlNode* tree_)
         XInitThreads();
         glutInit(&argc, argv);      // Initialize GLUT
         init = true;
-        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);//antialiasing
+        glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE);  // antialiasing
         glEnable(GL_MULTISAMPLE);
     }
     tree = tree_;
@@ -519,7 +519,7 @@ void drawTree(BT::ControlNode* tree_)
     glutInitWindowSize(1024, 860);
 
     glutCreateWindow("Behavior Tree");  // Create a window
-    //glutMouseFunc(mouse);
+    // glutMouseFunc(mouse);
 
     glutReshapeFunc(resize);
 
@@ -529,12 +529,12 @@ void drawTree(BT::ControlNode* tree_)
     glutDisplayFunc(display);   // Register display callback
 
 
-    glutKeyboardFunc(keyboard); // Register keyboard callback
-    glutSpecialFunc(processSpecialKeys); //Register keyboard arrow callback
+    glutKeyboardFunc(keyboard);  // Register keyboard callback
+    glutSpecialFunc(processSpecialKeys);  // Register keyboard arrow callback
 
     glutMainLoop();             // Enter main event loop
 
-    //***************************ENDOF BT VISUALIZATION ****************************
+    // ***************************ENDOF BT VISUALIZATION ****************************
 
 }
 

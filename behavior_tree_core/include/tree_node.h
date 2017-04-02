@@ -28,10 +28,10 @@
 
 #endif
 
-//#define DEBUG //uncomment this line if you want to print debug messages
+// #define DEBUG //uncomment this line if you want to print debug messages
 
 #ifdef DEBUG
-//#define DEBUG_STDERR(x) (std::cerr << (x))
+// #define DEBUG_STDERR(x) (std::cerr << (x))
 #define DEBUG_STDOUT(str) do { std::cout << str << std::endl; } while( false )
 
 #else
@@ -109,7 +109,7 @@ namespace BT
         std::condition_variable state_condition_variable_;
         // Node type
         NodeType type_;
-        //position and offset for horizontal positioning when drawing
+        // position and offset for horizontal positioning when drawing
         float x_shift_, x_pose_;
 
     public:
@@ -150,7 +150,7 @@ namespace BT
         virtual int Depth() = 0;
 
 
-        //Getters and setters
+        // Getters and setters
         void set_x_pose(float x_pose);
         float get_x_pose();
 

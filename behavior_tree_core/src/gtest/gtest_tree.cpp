@@ -252,7 +252,7 @@ struct ComplexFallbackWithMemoryTest : testing::Test
     {
         action_1 = new BT::ActionTestNode("action 1");
         action_2 = new BT::ActionTestNode("action 2");
-        //action_1->set_boolean_value(false);
+        // action_1->set_boolean_value(false);
         condition_1 = new BT::ConditionTestNode("condition 1");
         condition_2 = new BT::ConditionTestNode("condition 2");
 
@@ -639,7 +639,7 @@ TEST_F(ComplexSequenceWithMemoryTest, Action1Done) {
         std::this_thread::sleep_for(std::chrono::seconds(10));
         state = root->Tick();
 
-        //ASSERT_EQ(BT::IDLE, action_1->get_status());
+        // ASSERT_EQ(BT::IDLE, action_1->get_status());
         ASSERT_EQ(BT::RUNNING, action_2->get_status());
        // ASSERT_EQ(BT::RUNNING, state);
         root->Halt();
@@ -880,8 +880,8 @@ TEST_F(ComplexParallelTest, Condition3FalseAction1Done) {
     ASSERT_EQ(BT::IDLE, condition_1->get_status());
     ASSERT_EQ(BT::IDLE, condition_2->get_status());
     ASSERT_EQ(BT::IDLE, condition_3->get_status());
-    ASSERT_EQ(BT::SUCCESS, action_1->get_status()); //success not read yet by the node parallel_1
-    ASSERT_EQ(BT::RUNNING, parallel_1->get_status());// parallel_1 hasn't realize (yet) that action_1 has succeeded
+    ASSERT_EQ(BT::SUCCESS, action_1->get_status());  // success not read yet by the node parallel_1
+    ASSERT_EQ(BT::RUNNING, parallel_1->get_status());  // parallel_1 hasn't realize (yet) that action_1 has succeeded
 
     state = root->Tick();
 

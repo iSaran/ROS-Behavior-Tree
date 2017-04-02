@@ -26,4 +26,4 @@ private:
 
 };
 }
-#endif // PARALLEL_NODE_H
+#endif  // PARALLEL_NODE_H

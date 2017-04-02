@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 //            root->AddChild(seq);
 //        }
 
-        Execute(sequence1, TickPeriod_milliseconds);//from BehaviorTree.cpp
+        Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
 
 }
     catch (BT::BehaviorTreeException& Exception)
