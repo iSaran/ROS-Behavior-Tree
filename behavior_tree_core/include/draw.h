@@ -1,5 +1,5 @@
-#ifndef DRAWTREE_H
-#define DRAWTREE_H
+#ifndef DRAW_H
+#define DRAW_H
 #include <cstdlib>
 #include <GL/glut.h>
 #include <GL/glut.h>
@@ -37,4 +37,4 @@ int compute_max_width(const char *string);
 
 // void display();
 
-#endif  // DRAWTREE_H
+#endif  // DRAW_H

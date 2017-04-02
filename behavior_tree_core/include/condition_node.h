@@ -1,5 +1,5 @@
-#ifndef CONDITIONNODE_H
-#define CONDITIONNODE_H
+#ifndef CONDITION_NODE_H
+#define CONDITION_NODE_H
 
 #include "leaf_node.h"
 
@@ -25,4 +25,4 @@ int DrawType();
 };
 }
 
-#endif
+#endif  // CONDITION_NODE_H

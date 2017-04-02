@@ -1,5 +1,5 @@
-#ifndef DECORATORRETRYNODE_H
-#define DECORATORRETRYNODE_H
+#ifndef DECORATOR_RETRY_NODE_H
+#define DECORATOR_RETRY_NODE_H
 
 #include <control_node.h>
 
@@ -20,4 +20,4 @@ private:
 };
 }
 
-#endif
+#endif  // DECORATOR_RETRY_NODE_H

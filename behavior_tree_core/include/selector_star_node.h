@@ -1,5 +1,5 @@
-#ifndef SELECTORSTARNODE_H
-#define SELECTORSTARNODE_H
+#ifndef SELECTOR_STAR_NODE_H
+#define SELECTOR_STAR_NODE_H
 
 #include <control_node.h>
 
@@ -17,4 +17,4 @@ public:
 };
 }
 
-#endif
+#endif  // SELECTOR_STAR_NODE_H

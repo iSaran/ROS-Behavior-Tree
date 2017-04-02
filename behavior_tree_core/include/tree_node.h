@@ -1,5 +1,5 @@
-#ifndef BEHAVIORTREECORE_TREENODE_H
-#define BEHAVIORTREECORE_TREENODE_H
+#ifndef TREE_NODE_H
+#define TREE_NODE_H
 
 
 #ifndef _COLORS_
@@ -168,4 +168,4 @@ public:
 };
 }
 
-#endif
+#endif  // TREE_NODE_H

@@ -1,5 +1,5 @@
-#ifndef LEAFNODE_H
-#define LEAFNODE_H
+#ifndef LEAF_NODE_H
+#define LEAF_NODE_H
 
 #include <vector>
 
@@ -18,4 +18,4 @@ int Depth();
 };
 }
 
-#endif
+#endif  // LEAF_NODE_H

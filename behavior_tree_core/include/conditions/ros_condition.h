@@ -1,5 +1,5 @@
-#ifndef ROSCONDITION_H
-#define ROSCONDITION_H
+#ifndef CONDITIONS_ROS_CONDITION_H
+#define CONDITIONS_ROS_CONDITION_H
 
 #include <condition_node.h>
 #include <actionlib/client/simple_action_client.h>
@@ -23,4 +23,4 @@ public:
 };
 }
 
-#endif
+#endif  // CONDITIONS_ROS_CONDITION_H

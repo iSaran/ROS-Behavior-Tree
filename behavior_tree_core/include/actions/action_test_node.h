@@ -1,5 +1,5 @@
-#ifndef ACTIONTEST_H
-#define ACTIONTEST_H
+#ifndef ACTIONS_ACTION_TEST_NODE_H
+#define ACTIONS_ACTION_TEST_NODE_H
 
 #include <action_node.h>
 
@@ -29,4 +29,4 @@ private:
 };
 }
 
-#endif
+#endif  // ACTIONS_ACTION_TEST_NODE_H

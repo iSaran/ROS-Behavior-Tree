@@ -1,5 +1,5 @@
-#ifndef DECORATORNEGATIONNODE_H
-#define DECORATORNEGATIONNODE_H
+#ifndef DECORATOR_NEGATION_NODE_H
+#define DECORATOR_NEGATION_NODE_H
 
 #include <control_node.h>
 
@@ -18,4 +18,4 @@ int DrawType();
 };
 }
 
-#endif
+#endif  // DECORATOR_NEGATION_NODE_H

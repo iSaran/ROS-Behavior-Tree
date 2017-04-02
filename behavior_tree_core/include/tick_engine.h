@@ -21,4 +21,4 @@ public:
     void Tick();
 };
 
-#endif
+#endif  // TICK_ENGINE_H

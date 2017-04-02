@@ -1,5 +1,5 @@
-#ifndef SEQUENCESTARNODE_H
-#define SEQUENCESTARNODE_H
+#ifndef SEQUENCE_STAR_NODE_H
+#define SEQUENCE_STAR_NODE_H
 
 #include <control_node.h>
 
@@ -17,4 +17,4 @@ int DrawType();
 };
 }
 
-#endif
+#endif  // SEQUENCE_STAR_NODE_H

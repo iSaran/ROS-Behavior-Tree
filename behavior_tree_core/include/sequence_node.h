@@ -1,5 +1,5 @@
-#ifndef SEQUENCENODE_H
-#define SEQUENCENODE_H
+#ifndef SEQUENCE_NODE_H
+#define SEQUENCE_NODE_H
 
 #include <control_node.h>
 
@@ -17,4 +17,4 @@ public:
 };
 }
 
-#endif
+#endif  // SEQUENCE_NODE_H

@@ -1,5 +1,5 @@
-#ifndef BEHAVIORTREECORE_ACTIONNODE_H
-#define BEHAVIORTREECORE_ACTIONNODE_H
+#ifndef ACTION_NODE_H
+#define ACTION_NODE_H
 
 #include "leaf_node.h"
 
@@ -27,4 +27,4 @@ int DrawType();
 };
 }
 
-#endif
+#endif  // ACTION_NODE_H

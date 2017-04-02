@@ -1,5 +1,5 @@
-#ifndef BEHAVIORTREE_H
-#define BEHAVIORTREE_H
+#ifndef BEHAVIOR_TREE_H
+#define BEHAVIOR_TREE_H
 
 
 
@@ -44,4 +44,4 @@
 void Execute(BT::ControlNode* root, int TickPeriod_milliseconds);
 
 
-#endif
+#endif  // BEHAVIOR_TREE_H

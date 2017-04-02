@@ -1,5 +1,5 @@
-#ifndef FALLBACKNODE_H
-#define FALLBACKNODE_H
+#ifndef FALLBACK_NODE_H
+#define FALLBACK_NODE_H
 
 #include <control_node.h>
 
@@ -17,4 +17,4 @@ public:
 };
 }
 
-#endif
+#endif  // FALLBACK_NODE_H

@@ -1,5 +1,5 @@
-#ifndef CONTROLNODE_H
-#define CONTROLNODE_H
+#ifndef CONTROL_NODE_H
+#define CONTROL_NODE_H
 
 #include <vector>
 
@@ -44,4 +44,4 @@ public:
 };
 }
 
-#endif
+#endif  // CONTROL_NODE_H

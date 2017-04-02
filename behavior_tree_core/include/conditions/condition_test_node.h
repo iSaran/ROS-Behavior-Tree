@@ -1,5 +1,5 @@
-#ifndef CONDITIONTEST_H
-#define CONDITIONTEST_H
+#ifndef CONDITIONS_CONDITION_TEST_NODE_H
+#define CONDITIONS_CONDITION_TEST_NODE_H
 
 #include <condition_node.h>
 
@@ -20,4 +20,4 @@ private:
 };
 }
 
-#endif
+#endif  // CONDITIONS_CONDITION_TEST_NODE_H
