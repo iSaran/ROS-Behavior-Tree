@@ -1,7 +1,7 @@
 #ifndef ACTION_NODE_H
 #define ACTION_NODE_H
 
-#include "leaf_node.h"
+#include <leaf_node.h>
 
 namespace BT
 {

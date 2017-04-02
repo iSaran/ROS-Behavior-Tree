@@ -1,4 +1,4 @@
-#include "parallel_node.h"
+#include <parallel_node.h>
 
 
 BT::ParallelNode::ParallelNode(std::string name, int threshold_M) : ControlNode::ControlNode(name)

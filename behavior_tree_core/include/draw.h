@@ -2,10 +2,9 @@
 #define DRAW_H
 #include <cstdlib>
 #include <GL/glut.h>
-#include <GL/glut.h>
 #include <math.h>
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 #include <control_node.h>
 
 // enum status {RUNNING,SUCCESS,FAILURE,IDLE, HALTED };
