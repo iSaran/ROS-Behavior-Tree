@@ -227,7 +227,8 @@ void draw_node(float x, float y, int node_type, const char *leafName, int status
 }
 
 // draw the edge connecting one node to the other
-void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y, GLfloat child_size)
+void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y,
+               GLfloat child_size)
 {
     glLineWidth(1.5);
     glColor3f(0.0, 0.0, 0.0);
@@ -250,7 +251,8 @@ void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat 
 }
 
 // draw the edge connecting one node to the other
-void draw_straight_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y, GLfloat child_size)
+void draw_straight_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y,
+                        GLfloat child_size)
 {
     glLineWidth(1.5);
     glColor3f(0.0, 0.0, 0.0);
@@ -304,7 +306,8 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
     else
     {  // if it is a control flow node, draw it and its children
         // setpositions(tree, x_pos , y_pos, x_offset , 0.1 );
-        draw_node((GLfloat) x_pos, (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(), tree->get_color_status());
+        draw_node((GLfloat) x_pos, (GLfloat) y_pos, tree->DrawType(), tree->get_name().c_str(),
+                  tree->get_color_status());
 
 
         std::vector<BT::TreeNode*> children = d->GetChildren();
@@ -353,13 +356,16 @@ void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offs
             {
                 updateTree(children[i], x_shift + children_x_end.at(i-1) , y_pos - y_offset  , y_offset);
 
-                draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_end.at(i-1) + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
+                draw_edge(x_pos + 0.015, y_pos, 0.02,
+                          x_shift + children_x_end.at(i-1) + children_x_middle_relative.at(i),
+                          y_pos - y_offset, 0.02);
 
                 // draw_edge(tree->get_x_pose(), y_pos, 0.02, children[i]->get_x_pose() , y_pos - y_offset, 0.02);
             }
             else
             {
-                draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_middle_relative.at(i), y_pos - y_offset, 0.02);
+                draw_edge(x_pos + 0.015, y_pos, 0.02, x_shift + children_x_middle_relative.at(i),
+                          y_pos - y_offset, 0.02);
 
                 updateTree(children[i], x_shift , y_pos - y_offset  , y_offset);
             }

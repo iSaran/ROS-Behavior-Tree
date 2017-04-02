@@ -41,7 +41,8 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
             // Action nodes runs in another thread, hence you cannot retrieve the status just by executing it.
 
             child_i_status_ = children_nodes_[current_child_idx_]->get_status();
-            DEBUG_STDOUT(get_name() << " It is an action " << children_nodes_[current_child_idx_]->get_name() << " with status: " << child_i_status_);
+            DEBUG_STDOUT(get_name() << " It is an action " << children_nodes_[current_child_idx_]->get_name()
+                                    << " with status: " << child_i_status_);
 
 
 
@@ -57,7 +58,8 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
                     child_i_status_ = children_nodes_[current_child_idx_]->get_status();
                     std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 }
-                while (child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS && child_i_status_ != BT::FAILURE);
+                while (child_i_status_ != BT::RUNNING && child_i_status_ != BT::SUCCESS &&
+                       child_i_status_ != BT::FAILURE);
             }
         }
         else
@@ -70,7 +72,8 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
 
         if (child_i_status_ == BT::SUCCESS ||child_i_status_ == BT::FAILURE )
         {
-            children_nodes_[current_child_idx_]->set_status(BT::IDLE);  // the child goes in idle if it has returned success or failure.
+            // the child goes in idle if it has returned success or failure.
+            children_nodes_[current_child_idx_]->set_status(BT::IDLE);
         }
 
 
@@ -79,7 +82,8 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
         {
             // -  If the  child status is not success, return the status
             DEBUG_STDOUT("the status of: " << get_name() << " becomes " << child_i_status_);
-            if (child_i_status_ == BT::FAILURE && (reset_policy_ == BT::ON_FAILURE || reset_policy_ == BT::ON_SUCCESS_OR_FAILURE))
+            if (child_i_status_ == BT::FAILURE &&
+                (reset_policy_ == BT::ON_FAILURE || reset_policy_ == BT::ON_SUCCESS_OR_FAILURE))
             {
                 current_child_idx_ = 0;
             }
@@ -88,7 +92,9 @@ BT::ReturnStatus BT::SequenceNodeWithMemory::Tick()
         }
         else if (current_child_idx_ != N_of_children_ - 1)
         {
-            // If the  child status is success, continue to the next child (if any, hence if(current_child_ != N_of_children_ - 1) ) in the for loop (if any).
+            // If the  child status is success, continue to the next child (if
+            // any, hence if(current_child_ != N_of_children_ - 1) ) in the for
+            // loop (if any).
             current_child_idx_++;
         }
         else

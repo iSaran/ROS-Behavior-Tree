@@ -128,7 +128,8 @@ void BT::DecoratorNegationNode::Exec()
 
                     std::cout << get_name() << " halting child  "  << "!" << std::endl;
                 }
-                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE && children_nodes_[0]->ReadState() == BT::RUNNING)
+                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE &&
+                         children_nodes_[0]->ReadState() == BT::RUNNING)
                 {
                     std::cout << get_name() << " trying halting child  "  << "..." << std::endl;
 
@@ -146,7 +147,8 @@ void BT::DecoratorNegationNode::Exec()
 
                     std::cout << get_name() << " halting of child  "  << " succedeed!" << std::endl;
                 }
-                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE && children_nodes_[0]->ReadState() != BT::IDLE)
+                else if (children_nodes_[0]->get_type() == BT::ACTION_NODE &&
+                         children_nodes_[0]->ReadState() != BT::IDLE)
                 {
                     // if it's a action node that has finished its job:
                     // ticking it without saving its returning state;

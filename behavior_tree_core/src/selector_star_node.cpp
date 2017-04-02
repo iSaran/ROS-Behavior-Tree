@@ -103,8 +103,8 @@ void BT::SelectorStarNode::Exec()
                     // 3.4) the while loop must end here.
                     break;
                 }
-                else if (children_states_[i] == BT::FAILURE)  // if child i has failed the selector star node can tick the next child
-                {
+                else if (children_states_[i] == BT::FAILURE)
+                {  // if child i has failed the selector star node can tick the next child
                     i++;
                 }
             }

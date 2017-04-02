@@ -24,7 +24,8 @@ void renderBitmapString(float x, float y, void *font, const char *string);
 
 void draw_node(float x, float y, int node_type, const char *leafName, int status);
 
-void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y, GLfloat child_size);
+void draw_edge(GLfloat parent_x, GLfloat parent_y, GLfloat parent_size, GLfloat child_x, GLfloat child_y,
+               GLfloat child_size);
 
 void keyboard(unsigned char key, int x, int y);
 
