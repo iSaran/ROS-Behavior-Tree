@@ -22,36 +22,28 @@ int main(int argc, char **argv)
         int TickPeriod_milliseconds = 1000;
 
         BT::ActionTestNode* action1 = new BT::ActionTestNode("Action 1");
-        // BT::ConditionTestNode* condition1 = new BT::ConditionTestNode("Condition 1");  // commented-out as unused
+        BT::ConditionTestNode* condition1 = new BT::ConditionTestNode("Condition 1");  // commented-out as unused
         BT:: SequenceNode* sequence1 = new BT::SequenceNode("seq1");
 
 
         BT::ActionTestNode* action2 = new BT::ActionTestNode("Action 2");
         BT::ConditionTestNode* condition2 = new BT::ConditionTestNode("Condition 2");
-        BT:: SequenceNode* sequence2 = new BT::SequenceNode("seq1");
+        BT:: SequenceNode* sequence2 = new BT::SequenceNode("seq2");
 
         BT::ActionTestNode* action3 = new BT::ActionTestNode("Action 3");
         BT::ConditionTestNode* condition3 = new BT::ConditionTestNode("Condition 3");
-        BT:: SequenceNode* sequence3 = new BT::SequenceNode("seq1");
+        BT:: SequenceNode* sequence3 = new BT::SequenceNode("seq3");
 
-
-        // Commented-out as unused variables
-        // BT::ActionTestNode* action4 = new BT::ActionTestNode("Action 4");
-        // BT::ConditionTestNode* condition4 = new BT::ConditionTestNode("Condition 4");
-        // BT:: SequenceNode* sequence4 = new BT::SequenceNode("seq1");
-
-
-        sequence1->AddChild(condition2);
+        sequence1->AddChild(condition1);
         sequence1->AddChild(action1);
         sequence1->AddChild(sequence2);
-        sequence1->AddChild(action3);
-        sequence1->AddChild(sequence2);
 
-        sequence2->AddChild(action2);
         sequence2->AddChild(condition2);
+        sequence2->AddChild(action2);
 
-        sequence3->AddChild(condition3);
-        sequence3->AddChild(action3);
+        // sequence2->AddChild(sequence3);
+        // sequence3->AddChild(condition3);
+        // sequence3->AddChild(action3);
 
         Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp
     }

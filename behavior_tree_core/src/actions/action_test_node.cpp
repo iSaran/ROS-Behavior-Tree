@@ -19,7 +19,7 @@ BT::ActionTestNode::ActionTestNode(std::string name) : ActionNode::ActionNode(na
 {
     type_ = BT::ACTION_NODE;
     boolean_value_ = true;
-    time_ = 3;
+    time_ = 10;
     thread_ = std::thread(&ActionTestNode::WaitForTick, this);
 }
 
